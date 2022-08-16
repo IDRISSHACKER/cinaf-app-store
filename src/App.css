@@ -1,0 +1,12 @@
+html, body{
+  background: #f0f3f5;
+  font-family: "Montserrat";
+  --primary: #10662e;
+  --radius: 4px;
+}
+
+.container{
+    height: 100%;
+    margin: auto;
+    max-width: 1200px;
+}
