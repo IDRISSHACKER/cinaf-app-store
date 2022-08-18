@@ -2,17 +2,24 @@ import React from "react";
 import { Typography } from "@mui/material";
 import "./Dashboard.scss";
 import Container from './../../components/container/container';
+import DownloadProgress from "./components/DownloadProgress/DownloadProgress";
+import AppManager from './components/appManager/appManager';
 
 function Dashboard() {
   return (
     <Container>
       <div className="Dashboard">
         <Typography variant="h4">
-            <strong>Dashboard</strong>
+          <strong>Dashboard</strong>
         </Typography>
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum corporis illum libero rerum vero repellat aliquam assumenda sit repudiandae fugiat perspiciatis, minima minus itaque, reprehenderit odio eveniet. Ut, quod illo?
-        </p>
+        <br />
+        <br />
+        <DownloadProgress />
+        <br />
+        <br />
+        <AppManager />
+        <br />
+        <br />
       </div>
     </Container>
   );
