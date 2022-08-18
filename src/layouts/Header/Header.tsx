@@ -15,10 +15,19 @@ function Header() {
     <div className="application">
       <div className="nav">
         <div className="Head">
-          <div className="logo">
-            <a href={"/store"}>
-              <img src={cinafApp} alt="cinafApp" />
-            </a>
+          <div className="startNavigation">
+            <div className="logo">
+              <a href={"/store"}>
+                <img src={cinafApp} alt="cinafApp" />
+              </a>
+            </div>
+            <div className="navigation">
+              <Link to={"/store"} className={"link navItem"} style={{textDecoration: "none", color: "#fff"}}>
+                <Typography>
+                  <strong>Store</strong>
+                </Typography>
+              </Link>
+            </div>
           </div>
           <div className="endNavigation">
             <AdminMenu />

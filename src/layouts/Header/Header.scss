@@ -1,3 +1,5 @@
+@import "./../../sass/var";
+
 .Head{
     margin-bottom: 40px;
     position: fixed;
@@ -14,6 +16,28 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    .startNavigation{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+        .navigation{
+            .navItem{
+               *{
+                font-size: 19px;
+                transition: all linear 200ms;
+               }
+
+               &:hover{
+                *{
+                    color: lighten($color: $primary, $amount: 20);
+                }
+               }
+            }
+        }
+    }
 
     .endNavigation{
         margin-right: 40px;
