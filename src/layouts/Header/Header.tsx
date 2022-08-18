@@ -5,16 +5,20 @@ import cinafApp from "./cinaf-app.png";
 import Sidebar from './../Sidebar/Sidebar';
 import { Link } from "react-router-dom";
 import AdminMenu from "./components/adminMenu/AdminMenu";
+import { useDispatch } from 'react-redux';
+import { setActiveMenu } from "../../redux/store";
 
 function Header() {
+
+
   return (
     <div className="application">
       <div className="nav">
         <div className="Head">
           <div className="logo">
-            <Link to={"/store"}>
+            <a href={"/store"}>
               <img src={cinafApp} alt="cinafApp" />
-            </Link>
+            </a>
           </div>
           <div className="endNavigation">
             <AdminMenu />

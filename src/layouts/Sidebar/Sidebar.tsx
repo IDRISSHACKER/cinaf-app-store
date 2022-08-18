@@ -27,6 +27,7 @@ function Sidebar() {
       });
 
       React.useEffect(() => {
+        console.log(currentPage);
         if (window.location.pathname === "/dashboard") {
           setActive(0);
           dispatch(setActiveMenu(0));
@@ -41,9 +42,16 @@ function Sidebar() {
         dispatch(setActiveMenu(menuActive));
       }
 
+      const reloadingPathTimer = 1000
+
+      const reloadPath = setTimeout(() => {
+        setCurrentPage(window.location.pathname);
+        clearInterval(reloadPath);
+      } , 1000)
+
   return (
     <>
-      {adminPages.includes(currentPage) ? (
+      {currentPage !== "/store" ? (
         <div className="Sidebar" style={{ width: consts.sidebarWidth + "px" }}>
           <div className="sidebar-items">
             <Link
