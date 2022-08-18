@@ -1,0 +1,68 @@
+@import "../../sass/var";
+
+.Sidebar{
+    z-index: 100;
+    height: 100%;
+    position: fixed;
+    background: #fff;
+
+    padding-top: 100px;
+    box-sizing: border-box !important;
+
+    .sidebar-items{
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        justify-content: flex-start;
+        align-items: flex-start;
+        box-sizing: border-box !important;
+
+        .item{
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 15px 20px 15px 20px;
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            width: 100%;
+            transition: all linear 200ms;
+            box-sizing: border-box !important;
+            font-weight: 400;
+            text-decoration: none !important;
+            color: inherit;
+
+            &:hover{
+                color: darken($color: $primary, $amount: 25);
+                background: lighten($color: $primary, $amount: 34);
+            }
+        }
+
+        .active-it{
+            color: darken($color: $primary, $amount: 25);
+            background: lighten($color: $primary, $amount: 34);
+        }
+    }
+
+}
+
+@media only screen and (max-width: 900px){
+    .Sidebar{
+        width:  70px !important;
+
+        .sidebar-items{
+            padding: 10px 5px;
+            .item{
+                .item-text{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .container{
+        margin-left: 80px !important;
+    }
+}

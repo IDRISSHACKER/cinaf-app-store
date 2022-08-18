@@ -4,11 +4,12 @@ import Flexer from './../../components/Flexer';
 import Uploader from './components/Uploader';
 import mediaUpload from "./components/mediaUpload.svg"
 import Modes from './components/Mode/Modes';
+import Container from './../../components/container/container';
 
 function Home(){
     return (
       <>
-        <div className="container">
+        <Container>
           <div className="Home">
             <Flexer col={true}>
               <Modes />
@@ -23,7 +24,7 @@ function Home(){
               </div>
             </Flexer>
           </div>
-        </div>
+        </Container>
       </>
     );
 }

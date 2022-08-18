@@ -4,7 +4,7 @@
     top: 0;
     background: #0f1128;
     width: 100%;
-    padding: 20px 70px 20px 70px;
+    padding: 20px 20px 20px 20px;
     color: white !important;
     height: 30px;
     display: flex;
@@ -24,4 +24,8 @@
 .Head .logo img{
     width: 100%;
     height: auto;
+}
+
+.sider{
+    display: flex;
 }
