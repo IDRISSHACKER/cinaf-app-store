@@ -1,12 +1,12 @@
 
-import React,{lazy, Suspense} from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import React,{lazy, Suspense} from "react"
+import { Routes, Route, Navigate } from "react-router-dom"
 
-import Header from "./layouts/Header/Header";
+import Header from "./layouts/Header/Header"
 
-const Upload  = lazy(() => import("./screens/Home/Home"));
-const Dashboard = lazy(() => import("./screens/Dashboard/Dashboard"));
-
+const Upload  = lazy(() => import("./screens/Home/Home"))
+const Dashboard = lazy(() => import("./screens/Dashboard/Dashboard"))
+const Store = lazy(() => import("./screens/Store/Store"))
 
 export default function AppRouter() {
   return (
@@ -16,7 +16,8 @@ export default function AppRouter() {
               <Routes>
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/upload" element={<Upload />} />
-                <Route path="*" element={<Navigate to="/dashboard" />} />
+                <Route path="/store" element={<Store />} />
+                <Route path="*" element={<Navigate to="/store" />} />
               </Routes>
         </Suspense>
     </div>

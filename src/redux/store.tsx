@@ -2,16 +2,22 @@ import { configureStore } from "@reduxjs/toolkit"
 import modeSlice from "./slices/settingsSlice/modeSlice"
 import plateformeSlice from './slices/plateformeSlice/plateformeSlice'
 import mediaSlice from './slices/mediaSlice/mediaSlice'
+import adminSlice from "./slices/adminSlice/adminSlice"
+import menuSlice from "./slices/menuSlice/menuSlice"
 
 const store = configureStore({
   reducer: {
     mode: modeSlice.reducer,
     plateforme: plateformeSlice.reducer,
-    media: mediaSlice.reducer
+    media: mediaSlice.reducer,
+    admin: adminSlice.reducer,
+    menu: menuSlice.reducer
   },
 });
 
 export const { setSelectMode } = modeSlice.actions
 export const { selectPlateforme } = plateformeSlice.actions
 export const { setMedia, removeMedia } = mediaSlice.actions;
+export const { getAdmin } = adminSlice.actions;
+export const { setActiveMenu } = menuSlice.actions
 export default store

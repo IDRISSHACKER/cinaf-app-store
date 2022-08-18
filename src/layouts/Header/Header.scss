@@ -4,13 +4,20 @@
     top: 0;
     background: #0f1128;
     width: 100%;
-    padding: 20px 20px 20px 20px;
+    padding: 20px 40px 20px 20px !important;
     color: white !important;
     height: 30px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .endNavigation{
+        margin-right: 40px;
+    }
 }
 
 .Head .logo{
