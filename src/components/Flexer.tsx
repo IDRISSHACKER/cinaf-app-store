@@ -1,9 +1,9 @@
 import React from "react";
 import "./flexer.css";
 
-function Flexer({children}:any) {
+function Flexer({children, col}:any) {
   return (
-    <div className="flexer">
+    <div className={`flexer-col`}>
         {children}
     </div>
   );

@@ -1,0 +1,53 @@
+@import "../../../../sass/var";
+
+.Plateformes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.plateforme{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgb(254, 254, 249);
+    padding: 7px 14px 7px 7px;
+    border-radius: 200px;
+    cursor: pointer;
+    height: 30px !important;
+    transition: all linear 300ms;
+    box-shadow: 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12) !important
+}
+
+.plateforme .img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    padding: 3px;
+    transition: all linear 300ms;
+}
+
+.plateforme .img img{
+    width: 100%;
+    height: auto;
+}
+
+.plateforme-active{
+    background: $primary;
+    color: white;
+}
+
+.plateforme-active .img{
+    background: darken($color: $primary, $amount: 12);
+}
+
+.plateforme:hover .img{
+    transform: scale(1.2);
+}

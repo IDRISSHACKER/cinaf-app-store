@@ -4,6 +4,7 @@ import "./home.css"
 import Flexer from './../../components/Flexer';
 import Uploader from './components/Uploader';
 import mediaUpload from "./components/mediaUpload.svg"
+import Modes from './components/Mode/Modes';
 
 function Home(){
     return (
@@ -11,14 +12,16 @@ function Home(){
         <Head />
         <div className="container">
           <div className="Home">
-            <Flexer>
+            <Flexer col={true}>
+              <Modes />
+              <br /><br />
               <Uploader />
               <div>
-                <img
+                {/**<img
                   src={mediaUpload}
                   alt="upload to gihon"
                   style={{ width: "500px" }}
-                />
+                />**/}
               </div>
             </Flexer>
           </div>

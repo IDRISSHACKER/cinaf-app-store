@@ -1,0 +1,81 @@
+@import "../../../sass/var";
+
+.Uploader{
+    border-radius: var(--radius);
+    min-height: 400px;
+    width: 400px;
+
+
+}
+
+.Uploader-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.imgTitle{
+    font-weight: 600 !important;
+}
+
+.imgThumbnail{
+    width: 100% !important;
+    height: 420px !important;
+    background-size:contain !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+
+.dashered{
+    border: solid 1px rgba($color: #2A2A2A, $alpha: 0.3);
+}
+
+.flexed{
+    width: 100% !important;
+}
+
+.form2cols{
+    display: flex;
+    gap: 30px;
+}
+
+.fields{
+    width: 100% !important;
+}
+
+@media only screen and (max-width: 700px){
+    .form2cols{
+        flex-direction: column !important;
+    }
+
+    .Uploader{
+        width: auto !important;
+    }
+
+}
+
+.col{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 40px;
+}
+
+.thumbnailDesk{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+
+    .imgThumbnailDesk{
+        width: 70px;
+        height: auto;
+    }
+}
+

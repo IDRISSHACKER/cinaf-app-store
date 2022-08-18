@@ -16,14 +16,25 @@ import {
   Stack
 } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
-import "./Uploader.css";
+import "./Uploader.scss";
 import defaultImage from "./defaultThumbnail.png";
 import { CopyAllOutlined, ResetTvOutlined, UploadFileOutlined } from "@mui/icons-material";
 import axios from "axios"
 import Linker from "./Linker";
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import short from './../../../utils';
+import Plateforme from './Plateformes/Plateformes';
+import Media from "./Media/Media";
+import Medias from "./Medias/Medias";
   
+const acceptTypeImg = [
+  "image/png",
+  "image/jpg",
+  "image/jpeg",
+  "image/svg+xml",
+  "image/webp",
+];
 
 function Uploader() {
 
@@ -62,15 +73,8 @@ function Uploader() {
   const handleFile = async(event:any) => {
     if (event.currentTarget.files[0]){
         const convertionNumber = 1000;
-        const acceptType = [
-          "image/png",
-          "image/jpg",
-          "image/jpeg",
-          "image/svg+xml",
-          "image/webp",
-        ];
 
-        if (acceptType.includes(event.currentTarget.files[0].type)){
+        if (acceptTypeImg.includes(event.currentTarget.files[0].type)){
             const urlImg = URL.createObjectURL(event.currentTarget.files[0]);
             setImg(event?.currentTarget?.files[0]);
             setImgName(event?.currentTarget?.files[0]?.name);
@@ -137,49 +141,47 @@ function Uploader() {
 
 
   return (
-    <div className="Upload-image">
-      <input
-        id="image"
-        type="file"
-        style={{ display: "none" }}
-        ref={selectImage}
-        onChange={handleFile}
-      />
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-      {/* Same as */}
-      <ToastContainer />
-      <label htmlFor="image">
-        <Card variant="outlined" className="Uploader">
-          <CardMedia
-            component="img"
-            className="imgThumbnail dashered"
-            image={apercu}
-            alt="image uploader"
-          />
+    <div className="form2cols">
+      <div className="Upload-image">
+        <Typography variant="h5">
+          Captures des differentes fonctionnalités
+        </Typography>
+        <br />
+        <br />
+        <input
+          id="image"
+          type="file"
+          style={{ display: "none" }}
+          ref={selectImage}
+          onChange={handleFile}
+          accept={`.png, .jpg, .jpeg, .svg, .webp`}
+        />
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+        {/* Same as */}
+        <ToastContainer />
+        <Card variant="outlined" className="">
+          <CardContent className="Uploader">
+            <label htmlFor="image">
+              <CardMedia
+                component="img"
+                className="imgThumbnail dashered"
+                image={apercu}
+                alt="image uploader"
+              />
+            </label>
+            <Medias />
+          </CardContent>
           <br />
-          {imgSelected ? (
-            <CardContent>
-              <List>
-                <ListItem button>
-                  <ListItemText className="imgTitle" primary={`${imgName}`} />
-                </ListItem>
-                <Divider />
-                <ListItem button>
-                  <ListItemText className="imgSize" primary={`${size}`} />
-                </ListItem>
-              </List>
-            </CardContent>
-          ) : null}
           <CardActions>
             {imgSelected ? (
               <div>
@@ -191,20 +193,6 @@ function Uploader() {
                 >
                   Annuler
                 </Button>
-                <LoadingButton
-                  loading={uploading}
-                  variant="contained"
-                  loadingPosition="start"
-                  startIcon={<UploadFileOutlined />}
-                  disableElevation
-                  onClick={handleUpload}
-                >
-                  {uploading ? (
-                    <span>Televersement... {uploaded}%</span>
-                  ) : (
-                    <span>Televerser</span>
-                  )}
-                </LoadingButton>
               </div>
             ) : (
               <Stack
@@ -214,19 +202,68 @@ function Uploader() {
                 alignItems="center"
                 className="flexed"
               >
-                <Button
+                {/**<Button
                   variant="contained"
                   disableElevation
                   onClick={handleSelectImg}
                 >
                   Selectionner l'image a televerser
-                </Button>
-                <Linker link={link} opened={open} setOpened={setOpen} />
+            </Button>
+                <Linker link={link} opened={open} setOpened={setOpen} />*/}
               </Stack>
             )}
           </CardActions>
         </Card>
-      </label>
+      </div>
+      <div className="col">
+        <Plateforme />
+        <div className="plateforme-title">
+          <Typography variant="h5">
+            Information détaillés sur l'application
+          </Typography>
+        </div>
+        <div className="fields">
+          <Card variant="outlined" className="texts">
+            <CardContent>
+              <TextField
+                variant="outlined"
+                label="titre de l'application"
+                fullWidth
+              />
+              <br /> <br />
+              <TextField
+                variant="outlined"
+                label="Donner la version de l'application"
+                type="number"
+                fullWidth
+              />
+              <br /> <br />
+              <TextField
+                variant="outlined"
+                label="donner un resumer bref de l'application"
+                fullWidth
+                multiline
+                rows={5}
+              />
+            </CardContent>
+          </Card>
+        </div>
+        <LoadingButton
+          loading={uploading}
+          variant="contained"
+          loadingPosition="start"
+          startIcon={<UploadFileOutlined />}
+          disableElevation
+          onClick={handleUpload}
+          size="large"
+        >
+          {uploading ? (
+            <span>Televersement... {uploaded}%</span>
+          ) : (
+            <span>Publier sur le store</span>
+          )}
+        </LoadingButton>
+      </div>
     </div>
   );
 }
