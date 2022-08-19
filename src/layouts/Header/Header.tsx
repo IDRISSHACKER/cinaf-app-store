@@ -22,11 +22,11 @@ function Header() {
               </a>
             </div>
             <div className="navigation">
-              <Link to={"/store"} className={"link navItem"} style={{textDecoration: "none", color: "#fff"}}>
+              <a href={"/store"} className={"link navItem"} style={{textDecoration: "none", color: "#fff"}}>
                 <Typography>
                   <strong>Store</strong>
                 </Typography>
-              </Link>
+              </a>
             </div>
           </div>
           <div className="endNavigation">
