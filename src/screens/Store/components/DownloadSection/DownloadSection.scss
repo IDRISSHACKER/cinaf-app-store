@@ -1,0 +1,23 @@
+.download{
+
+    margin-bottom: 100px;
+    
+    .downloadContent{
+        background: #0f1127;
+        padding: 40px;
+        border-radius: 20px;
+
+        .download-body{
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        *{
+            color: white;
+        }
+    }
+}

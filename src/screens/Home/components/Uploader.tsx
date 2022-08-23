@@ -1,4 +1,7 @@
+// @ts-nocheck
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getSoftware } from "../../../redux/slices/softwareSlice/softwareSlice";
 import {
   Typography,
   Box,
@@ -13,21 +16,26 @@ import {
   ListItemText,
   Divider,
   IconButton,
-  Stack
+  Stack, Stepper,
 } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import "./Uploader.scss";
 import defaultImage from "./defaultThumbnail.png";
-import { CopyAllOutlined, ResetTvOutlined, UploadFileOutlined } from "@mui/icons-material";
-import axios from "axios"
+import {
+  CopyAllOutlined,
+  ResetTvOutlined,
+  UploadFileOutlined,
+} from "@mui/icons-material";
+import axios from "axios";
 import Linker from "./Linker";
-import { ToastContainer, toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
-import short from './../../../utils';
-import Plateforme from './Plateformes/Plateformes';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import short from "./../../../utils";
+import Plateforme from "./Plateformes/Plateformes";
 import Media from "./Media/Media";
 import Medias from "./Medias/Medias";
-  
+import path from "../../../const/path";
+
 const acceptTypeImg = [
   "image/png",
   "image/jpg",
@@ -37,81 +45,141 @@ const acceptTypeImg = [
 ];
 
 function Uploader() {
+  const dispatch = useDispatch();
+  const plateformes = useSelector((state: any) => state?.plateforme);
+  const softwares = useSelector((state: any) => state?.software);
+  const softwaresId = useSelector((state: any) => state?.softwareIdSlice);
 
-  const dImg = `${defaultImage}`
+  const dImg = `${defaultImage}`;
   const [img, setImg] = React.useState("");
-  const [apercu, setApercu] = React.useState(dImg)
-  const [uploading, setUploading] = React.useState(false)
-  const [imgSelected, setImgSelected] = React.useState(false)
-  const [uploaded, setUploaded] = React.useState(0)
+  const [apercu, setApercu] = React.useState(dImg);
+  const [uploading, setUploading] = React.useState(false);
+  const [imgSelected, setImgSelected] = React.useState(false);
+  const [uploaded, setUploaded] = React.useState(0);
   const selectImage = React.useRef<HTMLInputElement>(null);
-  const [imgName, setImgName] = React.useState("")
-  const [imgSize, setImgSize] = React.useState(0)
-  const [size, setSize] = React.useState(`${imgSize}`)
-  const [link, setLink] = React.useState("")
-  const [open, setOpen] = React.useState(false)
+  const [imgName, setImgName] = React.useState("");
+  const [imgSize, setImgSize] = React.useState(0);
+  const [size, setSize] = React.useState(`${imgSize}`);
+  const [link, setLink] = React.useState("");
+  const [open, setOpen] = React.useState(false);
+  const [softwareId, setSoftwareId] = React.useState({ softwareId : 4});
+  const [step, setStep] = React.useState(true);
+
+  const [title, setTitle] = React.useState("");
+  const [description, setDescription] = React.useState("");
+  const [version, setVersion] = React.useState("");
+  const [fkSupport, setFkSupport] = React.useState(
+    plateformes[plateformes.length - 1].id
+  );
+  const [resData, setResdata] = React.useState({id: 4});
+
+  React.useEffect(() => {
+    setFkSupport(plateformes[plateformes.length - 1].id);
+  }, [plateformes]);
+
+
+  const notify = () =>
+    toast.success("L'application à été ajoutée avec succès !", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   
-  const handleSelectImg = ()=> {
-    selectImage?.current?.click()
-  }
+  const handlePostSoftware = async () => {
+    setUploading(true);
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("version", version);
+    formData.append("fkSupport", fkSupport);
 
-    const notify = () =>
-      toast.success(
-        'Fichier televerser sous les serveurs de guihon avec success',
-        {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        }
-      );
+    axios
+      .post(`${path.api_url}/software`, formData, {})
+      .then((res) => {
+        dispatch({
+          type: "softwareIdSlice",
+          payload: { softwareId: res.data.softwareId },
+        });
+        setUploading(false);
+        setTitle("");
+        setDescription("");
+        setVersion("");
+        setFkSupport("1");
+        dispatch(getSoftware());
+            const formData2 = new FormData();
+            formData2.append("file", img);
+            formData2.append("type", "image");
+            formData2.append("iscover", "1");
+            formData2.append("software", `${res.data.softwareId}`);
 
-
-  const handleFile = async(event:any) => {
-    if (event.currentTarget.files[0]){
-        const convertionNumber = 1000;
-
-        if (acceptTypeImg.includes(event.currentTarget.files[0].type)){
-            const urlImg = URL.createObjectURL(event.currentTarget.files[0]);
-            setImg(event?.currentTarget?.files[0]);
-            setImgName(event?.currentTarget?.files[0]?.name);
-            setImgSize(event?.currentTarget?.files[0]?.size);
-            setApercu(urlImg);
-            setImgSelected(true);
-        }
-
-        const sizeKo = Math.floor(
-          event?.currentTarget?.files[0]?.size / convertionNumber
-        );
-        const sizeMo = Math.floor(sizeKo / convertionNumber)
-
-        if (sizeMo < 1) {
-          setSize(sizeKo + " KO");
-        } else {
-          setSize(sizeMo + " MO");
-        }
+            axios
+              .post(`${path.api_url}/media`, formData2)
+              .then((res) => {
+                setUploaded(uploaded + 1);
+                setImgSelected(false);
+                setImg("");
+                setApercu(dImg);
+                notify();
+              })
+              .catch((err) => {
+                console.log(err);
+              });
         
-    }
-  }
+      })
+      .catch((err) => {
+        console.log(err);
+        setUploading(false);
+      });
+  };
 
+  const handleSelectImg = () => {
+    selectImage?.current?.click();
+  };
+
+  const handleFile = async (event: any) => {
+    if (event.currentTarget.files[0]) {
+      const convertionNumber = 1000;
+
+      if (acceptTypeImg.includes(event.currentTarget.files[0].type)) {
+        const urlImg = URL.createObjectURL(event.currentTarget.files[0]);
+        setImg(event?.currentTarget?.files[0]);
+        setImgName(event?.currentTarget?.files[0]?.name);
+        setImgSize(event?.currentTarget?.files[0]?.size);
+        setApercu(urlImg);
+        setImgSelected(true);
+      }
+
+      const sizeKo = Math.floor(
+        event?.currentTarget?.files[0]?.size / convertionNumber
+      );
+      const sizeMo = Math.floor(sizeKo / convertionNumber);
+
+      if (sizeMo < 1) {
+        setSize(sizeKo + " KO");
+      } else {
+        setSize(sizeMo + " MO");
+      }
+    }
+  };
 
   const handleReset = () => {
-    setImg("")
-    setApercu(dImg)
-    setImgSelected(false)
-    setImgName("")
-    setImgSize(0)
-    setUploaded(0)
-  }
+    setImg("");
+    setApercu(dImg);
+    setImgSelected(false);
+    setImgName("");
+    setImgSize(0);
+    setUploaded(0);
+  };
 
-  const handleUpload = async()=>{
-    setUploading(true)
+  const handleUpload = async () => {
+    setUploading(true);
     const url = `http://localhost:5000/upload`;
     const formData = new FormData();
-    
+
     formData.append("file", img);
 
     const config = {
@@ -125,20 +193,19 @@ function Uploader() {
     await axios
       .post(url, formData, config)
       .then((res) => {
-        handleReset()
-        setUploading(false)
-        const path = `http://localhost:5000/${res.data.file}?quality=normal&compressed=true`
-        setApercu(path)
-        setLink(path)
-        setOpen(true)
-        notify()
+        handleReset();
+        setUploading(false);
+        const path = `http://localhost:5000/${res.data.file}?quality=normal&compressed=true`;
+        setApercu(path);
+        setLink(path);
+        setOpen(true);
+        notify();
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
         setUploading(false);
       });
-  }
-
+  };
 
   return (
     <div className="form2cols">
@@ -228,6 +295,8 @@ function Uploader() {
               <TextField
                 variant="outlined"
                 label="titre de l'application"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
                 fullWidth
               />
               <br /> <br />
@@ -235,12 +304,16 @@ function Uploader() {
                 variant="outlined"
                 label="Donner la version de l'application"
                 type="number"
+                value={version}
+                onChange={(e) => setVersion(e.target.value)}
                 fullWidth
               />
               <br /> <br />
               <TextField
                 variant="outlined"
                 label="donner un resumer bref de l'application"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
                 fullWidth
                 multiline
                 rows={5}
@@ -254,7 +327,7 @@ function Uploader() {
           loadingPosition="start"
           startIcon={<UploadFileOutlined />}
           disableElevation
-          onClick={handleUpload}
+          onClick={handlePostSoftware}
           size="large"
         >
           {uploading ? (

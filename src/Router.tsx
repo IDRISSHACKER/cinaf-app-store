@@ -1,6 +1,7 @@
 
 import React,{lazy, Suspense} from "react"
 import { Routes, Route, Navigate } from "react-router-dom"
+import Footer from "./layouts/Footer/Footer"
 
 import Header from "./layouts/Header/Header"
 
@@ -20,6 +21,7 @@ export default function AppRouter() {
                 <Route path="*" element={<Navigate to="/store" />} />
               </Routes>
         </Suspense>
+        <Footer />
     </div>
   );
 }

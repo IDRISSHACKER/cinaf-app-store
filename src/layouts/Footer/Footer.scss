@@ -1,0 +1,38 @@
+.footer{
+    background: #0f1127;
+    padding: 50px 0px;
+    overflow: hidden;
+
+    .footer-content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .section{
+
+            .section-head{
+                color: #fff;
+
+            }
+
+            .section-body{
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                gap: 20px;
+
+                .section-item{
+
+                    *{
+                        text-decoration: none !important;
+                        color: #fff;
+                    }
+
+                    &:hover{
+                        color: #ed9521;
+                    }
+                }
+            }
+        }
+    }
+}

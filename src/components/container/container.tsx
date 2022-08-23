@@ -1,5 +1,6 @@
 import React from 'react';
 import consts from '../../utils/consts';
+import "./container.scss";
 
 function Container({children}:any) {
     const [currentPage, setCurrentPage] = React.useState(
@@ -30,6 +31,13 @@ function Container({children}:any) {
         )}
       </>
     );
+}
+export function StoreContainer({ children }: any) {
+  return (
+    <div>
+      <div className="store-container">{children}</div>
+    </div>
+  );
 }
 
 export default Container;

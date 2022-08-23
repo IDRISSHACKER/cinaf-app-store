@@ -1,0 +1,31 @@
+.desk{
+    .desk-content{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+
+        .desk-icon{
+            *{
+                font-size: 90px;
+                color: rgba($color: darken($color: #ec8d30, $amount: 10), $alpha: .8);
+            }
+        }
+
+        .desk-content-desk{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .desk-title{
+                font-size: 16px;
+                font-weight: 500 !important;
+                color: darken($color: #ec8d30, $amount: 10);
+            }
+            .desk-text{
+                font-size: 12px !important;
+                color: rgba($color: #0f1128, $alpha: 0.6);
+            }
+        }
+    }
+}

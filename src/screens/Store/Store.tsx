@@ -1,16 +1,27 @@
-import { Typography } from "@mui/material";
-import React from "react"
-import Container from "../../components/container/container";
-import "./Store.scss"
+// @ts-nocheck
+import Slider from "./components/slider/Slid.tsx";
+import WebSection from "./components/WebSection/WebSection";
+import DeskSection from "./components/DeskSection/DeskSection";
+import ReadySection from "./components/ReadySection/ReadySection";
+import OfferSession from "./components/OfferSession/OfferSession";
+import DownloadedSession from "./components/DownloadSection/DownloadSection";
 
-const Store = ()=>{
-    return (
-      <Container>
-        <div className="Store">
-            <Typography variant="h4">Store</Typography>
-        </div>
-      </Container>
-    );
-}
+import "./Store.scss";
+
+const Store = () => {
+
+  return (
+    <div>
+      <div className="welcome">
+        <Slider />
+        <WebSection />
+        <DeskSection />
+        <ReadySection />
+        <OfferSession />
+        <DownloadedSession />
+      </div>
+    </div>
+  );
+};
 
 export default Store;
