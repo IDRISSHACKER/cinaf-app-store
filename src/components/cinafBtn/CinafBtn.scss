@@ -5,8 +5,10 @@
 .cinaf-btn{
     padding: 20px;
     border-radius: 10px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
+    height: 12px;
+    min-width: 160px;
 
     display: flex;
     align-items: center;
@@ -67,5 +69,17 @@
     }
 }
 
+.sm{
+    height: 8px !important;
+    font-size: 12px !important;
+}
 
 
+.btn-nav{
+    background: rgba($color: lighten(#fff, 5), $alpha: 0.2);
+    width: 100px;
+
+    &:hover{
+        background: rgba($color: lighten(#fff, 5), $alpha: 0.4);
+    }
+}

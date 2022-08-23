@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import AdminMenu from "./components/adminMenu/AdminMenu";
 import { useDispatch } from 'react-redux';
 import { setActiveMenu } from "../../redux/store";
+import CinafBtn from "../../components/cinafBtn/CinafBtn";
 
 function Header() {
 
@@ -22,14 +23,30 @@ function Header() {
               </a>
             </div>
             <div className="navigation">
-              <a href={"/store"} className={"link navItem"} style={{textDecoration: "none", color: "#fff"}}>
+              <a
+                href={"/store"}
+                className={"link navItem"}
+                style={{ textDecoration: "none", color: "#fff" }}
+              >
                 <Typography>
-                  <strong>Store</strong>
+                  <strong>Acceuil</strong>
+                </Typography>
+              </a>
+              <a
+                href={"/store"}
+                className={"link navItem"}
+                style={{ textDecoration: "none", color: "#fff" }}
+              >
+                <Typography>
+                  <strong>Telechargement</strong>
                 </Typography>
               </a>
             </div>
           </div>
           <div className="endNavigation">
+            <CinafBtn variant={"btn-nav sm"} noIcon>
+              S'abonner
+            </CinafBtn>
             <AdminMenu />
           </div>
         </div>

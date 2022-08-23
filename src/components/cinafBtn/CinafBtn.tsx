@@ -4,7 +4,7 @@ import {motion} from 'framer-motion'
 import "./CinafBtn.scss";
 import { DownloadOutlined } from "@mui/icons-material";
 
-function CinafBtn({children, variant="c-primary", downloadBtn=false}:any){
+function CinafBtn({children, variant="c-primary", downloadBtn=false, noIcon=false}:any){
 
     return (
       <motion.div
@@ -19,11 +19,7 @@ function CinafBtn({children, variant="c-primary", downloadBtn=false}:any){
             </div>
           )}
           <div className="text">{children}</div>
-          {!downloadBtn && (
-            <div className="icon">
-              <EastIcon />
-            </div>
-          )}
+          {!downloadBtn && <div className="icon">{!noIcon && <EastIcon />}</div>}
         </button>
       </motion.div>
     );

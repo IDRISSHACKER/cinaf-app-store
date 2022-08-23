@@ -25,6 +25,11 @@
         gap: 30px;
 
         .navigation{
+             margin-left: 40px !important;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             gap: 40px;
             .navItem{
                *{
                 font-size: 19px;
@@ -42,6 +47,10 @@
 
     .endNavigation{
         margin-right: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
     }
 }
 
