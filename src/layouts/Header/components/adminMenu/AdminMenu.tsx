@@ -58,7 +58,7 @@ function AdminMenu(){
             <MenuItem onClick={handleClose}>
               <Link
                 className="link"
-                to="/dashboard"
+                to="/admin"
                 style={{ textDecoration: "none" }}
                 onClick={handleNavigate}
               >

@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 import { setActiveMenu } from "../../redux/store";
 import CinafBtn from "../../components/cinafBtn/CinafBtn";
 
-function Header() {
+function AdminHeader() {
 
 
   return (
@@ -24,36 +24,19 @@ function Header() {
               </Link>
             </div>
             <div className="navigation">
-              <Link
-                to={"/home"}
-                className={"link navItem"}
-                style={{ textDecoration: "none", color: "#fff" }}
-              >
-                <Typography>
-                  <strong>Acceuil</strong>
-                </Typography>
-              </Link>
-              <Link
-                to={"/download"}
-                className={"link navItem"}
-                style={{ textDecoration: "none", color: "#fff" }}
-              >
-                <Typography>
-                  <strong>Telecharger</strong>
-                </Typography>
-              </Link>
+
             </div>
           </div>
           <div className="endNavigation">
-            <CinafBtn variant={"btn-nav sm"} noIcon>
-              S'abonner
-            </CinafBtn>
             <AdminMenu />
           </div>
+        </div>
+        <div className="sider">
+          <Sidebar />
         </div>
       </div>
     </div>
   );
 }
 
-export default Header;
+export default AdminHeader;

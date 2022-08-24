@@ -15,20 +15,12 @@ function Container({children}:any) {
 
     return (
       <>
-        {adminPages.includes(currentPage) ? (
           <div
             className="container"
             style={{ marginLeft: `${consts.sidebarWidth + 20}px` }}
           >
             {children}
           </div>
-        ) : (
-          <div
-            className="container"
-          >
-            {children}
-          </div>
-        )}
       </>
     );
 }

@@ -23,23 +23,21 @@ export default function AppRouter() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
          
-          <Route path="/admin/:path?">
-            <AdminContainer>
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/upload" element={<Upload />} />
-            </AdminContainer>
+          <Route path="/" element={<StoreContainer />}>
+            <Route index element={<Store />} />
+            <Route path="home" element={<Store />} />
+            <Route path="download" element={<Download />}>
+              <Route path=":appuiId" element={<AppPage />} />
+            </Route>
           </Route>
 
-          <Route>
-            <StoreContainer>
-              <Route path="/store" element={<Store />} />
-              <Route path="/download" element={<Download />} />
-              <Route path="/download/:uid" element={<AppPage />} />
-            </StoreContainer>
+          <Route path="admin" element={<AdminContainer />}>
+            <Route index element={<Dashboard />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="upload" element={<Upload />} />
           </Route>
-          
-          <Route path="*" element={<Navigate to="/store" />} />
-          
+
+          <Route path="*" element={<Navigate to="home" />} />
         </Routes>
       </Suspense>
     </div>

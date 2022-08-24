@@ -1,10 +1,16 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
+import AdminHeader from "../../layouts/Header/AdminHeader";
 
-export default ({ children }: any) => {
+export default () => {
   return (
     <div>
-      <h1>Admin</h1>
-      {children}
+      <section>
+        <AdminHeader />
+      </section>
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 };

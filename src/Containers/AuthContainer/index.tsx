@@ -1,10 +1,11 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
-export default ({ children }: any) => {
+export default () => {
   return (
     <div>
       <h1>Auth</h1>
-      {children}
+      <Outlet />
     </div>
   );
 };
