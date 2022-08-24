@@ -33,12 +33,12 @@ function Header() {
                 </Typography>
               </a>
               <a
-                href={"/store"}
+                href={"/download"}
                 className={"link navItem"}
                 style={{ textDecoration: "none", color: "#fff" }}
               >
                 <Typography>
-                  <strong>Telechargement</strong>
+                  <strong>Telecharger</strong>
                 </Typography>
               </a>
             </div>

@@ -1,0 +1,147 @@
+.downloadBody{
+    margin-top: 150px;
+    width: 100%;
+
+    .downloadBody-content{
+        background: #0f1127;
+        padding: 50px 80px;
+        border-radius: 10px;
+    }
+
+    *{
+        box-sizing: border-box !important;
+    }
+}
+
+.white{
+    color: white !important;
+}
+
+.bTitle{
+    font-size: 40px;
+    font-weight: 500;
+    align-items: center;
+}
+
+.whiteL{
+    color: rgba($color: #fff, $alpha: .6);
+    text-align: center;
+    line-height: 30px;
+}
+
+.d-head-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bloc-title{
+    color: white;
+    *{
+        color: white;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    .bloc-title-icon{
+        *{
+            font-size: 40px;
+        }
+    }
+
+    .bloc-title-text{
+        *{
+            font-size: 30px;
+            font-weight: 500;
+        }
+    }
+}
+
+
+.d-body{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    flex-direction: column;
+}
+
+.DDownload{
+    background: white;
+    border-radius: 10px;
+    padding: none;
+}
+
+.mb-10{
+    margin-bottom: 10px !important;
+}
+
+.DDownloadItem{
+
+    padding: 30px;
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .DIcon{
+        *{
+            font-size: 60px;
+            color: #0f1127;
+        }
+    }
+
+    .DText{
+        text-align: left !important;
+        font-size: 20px !important;
+        font-weight: 400 !important;
+    }
+}
+
+
+.DDownload{
+    width: 100%;
+    .DDownload-body{
+        width: 100%;
+
+        &:nth-child(odd){
+            .DDownloadItem{
+                border-bottom: solid 2px #0f1127;
+            }
+        }
+    }
+}
+
+
+.downloadLink{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: lighten($color: #f0f3f5, $amount: 3);
+    gap: 15px;
+    color: #3c77c6;
+    border-radius: 4px;
+    user-select: none;
+
+    text-decoration: none;
+
+    padding: 10px 20px;
+    transition: all linear 200ms;
+
+
+    &:hover{
+        transform: scale(1.02);
+    }
+
+    img{
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+    }
+}

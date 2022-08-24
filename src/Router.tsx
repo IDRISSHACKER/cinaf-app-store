@@ -8,6 +8,8 @@ import Header from "./layouts/Header/Header"
 const Upload  = lazy(() => import("./screens/Home/Home"))
 const Dashboard = lazy(() => import("./screens/Dashboard/Dashboard"))
 const Store = lazy(() => import("./screens/Store/Store"))
+const Download = lazy( () => import('./screens/Download/Download'));
+
 
 export default function AppRouter() {
   return (
@@ -18,6 +20,7 @@ export default function AppRouter() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/upload" element={<Upload />} />
                 <Route path="/store" element={<Store />} />
+                <Route path="/download" element={<Download />} />
                 <Route path="*" element={<Navigate to="/store" />} />
               </Routes>
         </Suspense>
