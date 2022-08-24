@@ -51,7 +51,9 @@ function Sidebar() {
 
   return (
     <>
-      {currentPage !== "/store" && currentPage !== "/download" ? (
+      {currentPage !== "/store" &&
+      currentPage !== "/download" &&
+      currentPage !== "/download/[]" ? (
         <div className="Sidebar" style={{ width: consts.sidebarWidth + "px" }}>
           <div className="sidebar-items">
             <Link

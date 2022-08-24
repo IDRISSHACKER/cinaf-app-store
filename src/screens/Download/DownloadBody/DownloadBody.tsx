@@ -8,6 +8,7 @@ import { AndroidOutlined } from '@mui/icons-material';
 import AppleIcon from '@mui/icons-material/Apple';
 import appleSrc from "./AppleStore.png"
 import androidSrc from "./playStore.png"
+import CinafBtn from "../../../components/cinafBtn/CinafBtn";
 
 function DownloadBody(){
 
@@ -84,6 +85,7 @@ function DDownloadItem({children, icon, to="", isLink=true, img=androidSrc}:any)
         {isLink && (
           <div className="DLink">
             <DDownloadLink to={to} icon={<img src={img} alt="" />}>Telecharger sur le store</DDownloadLink>
+            <MagnetDownloadLink to={to}>Telecharger</MagnetDownloadLink>
           </div>
         )}
       </div>
@@ -102,12 +104,11 @@ function DDownloadLink({to, children, icon}:any){
     );
 }
 
-function MagnetDownloadLink({ to, children, icon }: any) {
+function MagnetDownloadLink({ to, children }: any) {
   return (
-    <a href={to} className="dDownloadLink">
-      <div className="dlIcon">{icon}</div>
-      <div className="dlText">{children}</div>
-    </a>
+    <CinafBtn variant={"dl applyH"} downloadBtn to={to}>
+      Telecharger
+    </CinafBtn>
   );
 }
 

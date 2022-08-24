@@ -9,6 +9,7 @@ const Upload  = lazy(() => import("./screens/Home/Home"))
 const Dashboard = lazy(() => import("./screens/Dashboard/Dashboard"))
 const Store = lazy(() => import("./screens/Store/Store"))
 const Download = lazy( () => import('./screens/Download/Download'));
+const AppPage = lazy( ()=> import("./screens/App/App"))
 
 
 export default function AppRouter() {
@@ -21,6 +22,7 @@ export default function AppRouter() {
                 <Route path="/upload" element={<Upload />} />
                 <Route path="/store" element={<Store />} />
                 <Route path="/download" element={<Download />} />
+                <Route path="/download/:uid" element={<AppPage />} />
                 <Route path="*" element={<Navigate to="/store" />} />
               </Routes>
         </Suspense>
