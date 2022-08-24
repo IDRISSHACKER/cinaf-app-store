@@ -16,13 +16,15 @@ const AppPage = lazy( ()=> import("./screens/App/App"))
 const Upload  = lazy(() => import("./screens/Home/Home"))
 const Dashboard = lazy(() => import("./screens/Dashboard/Dashboard"))
 
+// Auth
+const Login = lazy(() => import("./screens/Login/Login"))
+
 
 export default function AppRouter() {
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-         
           <Route path="/" element={<StoreContainer />}>
             <Route index element={<Store />} />
             <Route path="home" element={<Store />} />
@@ -35,6 +37,10 @@ export default function AppRouter() {
             <Route index element={<Dashboard />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="upload" element={<Upload />} />
+          </Route>
+
+          <Route path="oauth/v1/login" element={<AuthContainer />}>
+            <Route index element={<Login />} />
           </Route>
 
           <Route path="*" element={<Navigate to="home" />} />
