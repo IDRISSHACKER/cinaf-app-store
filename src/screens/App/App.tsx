@@ -1,10 +1,11 @@
 import * as React from "react"
 import { StoreContainer } from "../../components/container/container"
+import Page from "../../components/Page"
 import "./AppPage.scss"
 
 function AppPage(){
 
-    return <div>
+    return <Page title="Telechargement de l'application">
         <div className="appPage">
             <StoreContainer>
                 <div className="appPage-body">
@@ -12,7 +13,7 @@ function AppPage(){
                 </div>
             </StoreContainer>
         </div>
-    </div>
+    </Page>
 
 }
 
