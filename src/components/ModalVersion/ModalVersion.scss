@@ -1,0 +1,19 @@
+.startDownload{
+    border-radius: 8px;
+    padding: 20px 10px;
+    background: #3f7ccf;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    box-sizing: border-box;
+    display: block;
+    width: 280px;
+    transition: all linear 200ms;
+
+    &:hover{
+        background: lighten($color: #3f7ccf, $amount: 5);
+    }
+}

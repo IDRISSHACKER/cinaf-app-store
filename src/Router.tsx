@@ -28,9 +28,8 @@ export default function AppRouter() {
           <Route path="/" element={<StoreContainer />}>
             <Route index element={<Store />} />
             <Route path="home" element={<Store />} />
-            <Route path="download" element={<Download />}>
-              <Route path=":appuiId" element={<AppPage />} />
-            </Route>
+            <Route path="download" element={<Download />} />
+            <Route path="download/:appuiId" element={<AppPage />} />
           </Route>
 
           <Route path="admin" element={<AdminContainer />}>
@@ -39,7 +38,7 @@ export default function AppRouter() {
             <Route path="upload" element={<Upload />} />
           </Route>
 
-          <Route path="oauth/v1/login" element={<AuthContainer />}>
+          <Route path="login" element={<AuthContainer />}>
             <Route index element={<Login />} />
           </Route>
 

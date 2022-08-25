@@ -1,4 +1,5 @@
 import React  from "react"
+import { Link } from "react-router-dom"
 import { StoreContainer } from "../../../components/container/container"
 import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
 import PersonalVideoOutlinedIcon from "@mui/icons-material/PersonalVideoOutlined";
@@ -70,8 +71,8 @@ function DDownloadContent(){
     return (
         <div className="DDownload">
             <div className="DDownload-body">
-                <DDownloadItem to="#" icon={<AndroidOutlined />} img={androidSrc}>Cinaf pour android</DDownloadItem>
-                <DDownloadItem to="#" icon={<AppleIcon />} img={appleSrc}>Cinaf pour ios</DDownloadItem>
+                <DDownloadItem to="/download/cinaf-ios" icon={<AndroidOutlined />} img={androidSrc}>Cinaf pour android</DDownloadItem>
+                <DDownloadItem to="/download/cinaf-android" icon={<AppleIcon />} img={appleSrc}>Cinaf pour ios</DDownloadItem>
             </div>
         </div>
     )
@@ -92,21 +93,21 @@ function DDownloadItem({children, icon, to="", isLink=true, img=androidSrc}:any)
     );
 }
 
-function DDownloadLink({to, children, icon}:any){
+export function DDownloadLink({to, children, icon}:any){
     return (
-      <a href={to} className="downloadLink">
+      <Link to={to} className="downloadLink">
         <div className="dlIcon">{icon}</div>
         <div className="dlText">{children}</div>
         <div>
             <LaunchOutlinedIcon />
         </div>
-      </a>
+      </Link>
     );
 }
 
-function MagnetDownloadLink({ to, children }: any) {
+export function MagnetDownloadLink({ to, children, variant, props }: any) {
   return (
-    <CinafBtn variant={"dl applyH"} downloadBtn to={to}>
+    <CinafBtn variant={`dl applyH ${variant}`} downloadBtn to={to} props={props}>
       Telecharger
     </CinafBtn>
   );
