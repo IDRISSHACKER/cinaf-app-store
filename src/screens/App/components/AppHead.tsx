@@ -10,8 +10,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import ModalVersion from "../../../components/ModalVersion/ModalVersion";
 import "./AppHead.scss"
 
-function AppHead(){
-
+function AppHead({app}:any){
     const [opened, setOpened] = React.useState(false)
 
     const handleOpenVersion = function(e:any){
@@ -24,7 +23,7 @@ function AppHead(){
           <div className="appHeadBody">
             <div className="desc">
               <div className="appTitle">
-                <h1 className="dtitle">CINAF FOR ANDROID</h1>
+                <h1 className="dtitle">{app?.software2?.title}</h1>
                 <div className="appAuth">
                   <span>CINAF</span>
                 </div>
