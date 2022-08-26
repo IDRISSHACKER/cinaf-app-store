@@ -80,8 +80,6 @@ function DDownloadContent() {
             softwares?.software[2]?.store
           }`}
           to={`/download/${
-            !softwares.loading && !softwares.error && softwares?.software[2]?.id
-          }-${
             !softwares.loading &&
             !softwares.error &&
             softwares?.software[2]?.slug
@@ -100,8 +98,6 @@ function DDownloadContent() {
             softwares?.software[0]?.store
           }`}
           to={`/download/${
-            !softwares.loading && !softwares.error && softwares?.software[0]?.id
-          }-${
             !softwares.loading &&
             !softwares.error &&
             softwares?.software[0]?.slug
@@ -127,10 +123,6 @@ function DDownloadContentTV() {
       <div className="DDownload-body">
         <DDownloadItem
           to={`/download/${
-            !softwares.loading &&
-            !softwares.error &&
-            softwares?.software[1]?.id
-          }-${
             !softwares.loading &&
             !softwares.error &&
             softwares?.software[1]?.slug

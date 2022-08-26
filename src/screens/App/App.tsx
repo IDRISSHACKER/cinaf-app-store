@@ -24,7 +24,9 @@ function AppPage() {
     return appliId;
   }
 
-  dispatch(getSoftware2(params.appuiId));
+  React.useState(()=>{
+    dispatch(getSoftware2(params.appuiId));
+  },[])
   
   const soft = useSelector((state:any) => state.software2);
 

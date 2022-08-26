@@ -8,6 +8,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import ModalVersion from "../../../components/ModalVersion/ModalVersion";
+import Skeleton from "@mui/material/Skeleton";
 import "./AppHead.scss"
 
 function AppHead({app}:any){
@@ -23,7 +24,12 @@ function AppHead({app}:any){
           <div className="appHeadBody">
             <div className="desc">
               <div className="appTitle">
-                <h1 className="dtitle">{app?.software2?.title}</h1>
+                {app.loading && (
+                  <Skeleton variant="rounded" width={410} height={50} />
+                )}
+                {!app.loading && (
+                  <h1 className="dtitle">{app?.software2?.title}</h1>
+                )}
                 <div className="appAuth">
                   <span>CINAF</span>
                 </div>
