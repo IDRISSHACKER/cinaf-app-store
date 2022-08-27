@@ -25,14 +25,19 @@ import { LoadingButton } from "@mui/lab";
 import CardContent from "@mui/material/CardContent";
 import { ReactComponent as UploadElement } from "./file-upload.svg";
 import imgUpload from "./upload.png";
-import apk from "./apk.png";
-import ios from "./iOS.jpg";
+import apk from "./apk.png"
+import ios from "./iOS.jpg"
+import success from "./success.jpg"
 import "./AddVersion.scss";
 import { CloudUploadTwoTone } from '@mui/icons-material';
 import paths from './../../../../../../const/path';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { getSoftware } from './../../../../../../redux/slices/softwareSlice/softwareSlice';
 
 export default function AddVersion({ opened, setOpened, post, props }: any) {
+  const dispatch = useDispatch()
+
   const [saving, setSaving] = React.useState(false)
   const [versionTyped, setVersionTyped] = React.useState()
   const [next, setNext] = React.useState();
@@ -58,7 +63,7 @@ export default function AddVersion({ opened, setOpened, post, props }: any) {
   };
 
   const notify = () =>
-    toast.success("Le téléversement de la nouvelle version vient de debuter", {
+    toast.success("La nouvelle version de l'application à été ajouter avec success", {
       position: "bottom-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -128,7 +133,13 @@ export default function AddVersion({ opened, setOpened, post, props }: any) {
     };
 
     axios.post(paths.api_url + "/version", formData, config).then(res=>{
+        setEnd(true)
         console.log(res.data)
+        notify()
+        const timer = setTimeout(()=>{
+          dispatch(getSoftware());
+          clearTimeout(timer)
+        }, 5000)
     }).catch(err => console.log(err))
   }
 
@@ -158,7 +169,13 @@ export default function AddVersion({ opened, setOpened, post, props }: any) {
             </div>
           ) : (
             <div>
-              <h1 className="vh1">Televersement de l'app en cour</h1>
+              <h1 className="vh1">
+                {!end ? (
+                  <span>Televersement de l'app en cour</span>
+                ) : (
+                  <span>Televersement terminer</span>
+                )}
+              </h1>
             </div>
           )}
         </DialogTitle>
@@ -182,10 +199,28 @@ export default function AddVersion({ opened, setOpened, post, props }: any) {
                     <CardContent>
                       <Box sx={{ minWidth: 120 }}>
                         {saving ? (
-                          <Box sx={{ display: "flex" }} className="uploadLoad">
-                            <CircularProgress />
-                            <h2 className="h2">{uploaded}%</h2>
-                          </Box>
+                          <div>
+                            {!end ? (
+                              <Box
+                                sx={{ display: "flex" }}
+                                className="uploadLoad"
+                              >
+                                <CircularProgress />
+                                <h2 className="h2">{uploaded}%</h2>
+                              </Box>
+                            ) : (
+                              <Box
+                                sx={{ display: "flex" }}
+                                className="upSuccess"
+                              >
+                                <img src={success} />
+                                <h2 className="vh2">
+                                  La nouvelle version a été ajouter avec success
+                                  :-{")"}
+                                </h2>
+                              </Box>
+                            )}
+                          </div>
                         ) : (
                           <div className="uploadThumb">
                             <div className="uploadThumbContent">
@@ -245,14 +280,16 @@ export default function AddVersion({ opened, setOpened, post, props }: any) {
                   Ajouter la version
                 </Button>
               ) : (
-                <LoadingButton
-                  loading
-                  loadingPosition="start"
-                  startIcon={<CloudUploadTwoTone />}
-                  variant="outlined"
-                >
-                  savegarde de {file?.name} en cour...
-                </LoadingButton>
+                <div>
+                  {!end && <LoadingButton
+                    loading
+                    loadingPosition="start"
+                    startIcon={<CloudUploadTwoTone />}
+                    variant="outlined"
+                  >
+                    savegarde de {file?.name} en cour...
+                  </LoadingButton>}
+                </div>
               )}
             </div>
           )}

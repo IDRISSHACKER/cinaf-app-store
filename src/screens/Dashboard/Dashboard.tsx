@@ -1,6 +1,7 @@
 // @ts-nocheck
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { ToastContainer } from "react-toastify";
 import { Typography } from "@mui/material";
 import "./Dashboard.scss";
 import Container from "./../../components/container/container";
@@ -8,6 +9,7 @@ import DownloadProgress from "./components/DownloadProgress/DownloadProgress";
 import AppManager from "./components/appManager/appManager";
 import Page from "../../components/Page";
 import { getSoftware } from "./../../redux/slices/softwareSlice/softwareSlice";
+import "react-toastify/dist/ReactToastify.css";
 
 function Dashboard() {
   const dispatch = useDispatch();
@@ -30,6 +32,19 @@ function Dashboard() {
           <br />
           <DownloadProgress />
           <br />
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+          {/* Same as */}
+          <ToastContainer />
           <br />
           <AppManager soft={softwares} />
           <br />
