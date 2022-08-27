@@ -1,0 +1,87 @@
+*{
+    font-family: "montserrat";
+}
+
+.illus-upload{
+
+    width: 550px;
+    min-width: 100% !important;
+}
+
+.uploadThumb{
+    width: 100%;
+    
+}
+
+.nvisible{
+    display: none;
+}
+
+.vh1{
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    color: #0f1128;
+}
+
+.vh2{
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    color: rgba($color: darken($color: #c4eadd, $amount: 80), $alpha: .7);   
+    //background: lighten($color: #c4eadd, $amount: 15);
+    //border: solid lighten($color: #c4eadd, $amount: 13);
+    display: block;
+    padding: 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover{
+         color: rgba($color: darken($color: #c4eadd, $amount: 80), $alpha: .8);   
+    }
+}
+
+.uploadThumbContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.addSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.uploadThumb{
+
+}
+
+.uploadZone{
+    cursor: pointer;
+    border: dashed 1px #ddd;
+    width: 500px;
+    min-width: 100%;
+}
+
+.uploadApercu{
+    height: 200px;
+    width: auto;
+}
+
+.uploadLoad{
+    height: 300px;
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}

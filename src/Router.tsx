@@ -1,6 +1,7 @@
 
 import React,{lazy, Suspense} from "react"
 import { Routes, Route, Navigate } from "react-router-dom"
+import {Box, LinearProgress} from "@mui/material"
 
 // container
 import AdminContainer from "./Containers/AdminContainer"
@@ -23,7 +24,13 @@ const Login = lazy(() => import("./screens/Login/Login"))
 export default function AppRouter() {
   return (
     <div>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <Box sx={{ width: "100%" }}>
+            <LinearProgress />
+          </Box>
+        }
+      >
         <Routes>
           <Route path="/" element={<StoreContainer />}>
             <Route index element={<Store />} />
