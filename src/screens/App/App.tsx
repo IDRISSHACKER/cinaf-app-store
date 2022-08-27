@@ -3,12 +3,14 @@ import * as React from "react";
 import { StoreContainer } from "../../components/container/container";
 import Page from "../../components/Page";
 import AppHead from "./components/AppHead";
+import { ToastContainer } from "react-toastify";
 import "./AppPage.scss";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import paths from "./../../const/path";
 import { getSoftware2 } from "../../redux/slices/softwareSlice/softwareSlice";
 import { useParams } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 
 function AppPage() {
   const params = useParams()
@@ -36,6 +38,19 @@ function AppPage() {
         <div className="appPage-body">
           <StoreContainer>
             <AppHead app={soft} />
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
+            {/* Same as */}
+            <ToastContainer />
           </StoreContainer>
         </div>
       </div>

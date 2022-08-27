@@ -17,3 +17,27 @@
         background: lighten($color: #3f7ccf, $amount: 5);
     }
 }
+
+.downStatus{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.center{
+    text-align: center;
+}
+
+
+.endSucc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    img{
+        width: 100%;
+        height: auto;
+    }
+}

@@ -30,7 +30,7 @@ function Dashboard() {
           </Typography>
           <br />
           <br />
-          <DownloadProgress />
+          <DownloadProgress soft={softwares} />
           <br />
           <ToastContainer
             position="top-right"

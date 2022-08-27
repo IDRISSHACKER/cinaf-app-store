@@ -14,7 +14,7 @@ import AddVersion from "./components/AddVersion/AddVersion";
 function AppManager({soft}:any) {
     return (
       <Card>
-        <CardHeader title="Gestionnaire d'applications" />
+        <CardHeader title="Versionnage" />
         <CardContent>
           {soft.loading ? (
             <CircularProgress disableShrink />

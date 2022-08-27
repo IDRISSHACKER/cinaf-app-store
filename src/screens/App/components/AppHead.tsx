@@ -44,6 +44,7 @@ function AppHead({app}:any){
                   opened={opened}
                   setOpened={handleOpenVersion}
                   link={""}
+                  versions={app?.software2?.versions}
                 />
               </div>
             </div>
