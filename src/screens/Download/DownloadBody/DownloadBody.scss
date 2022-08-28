@@ -82,7 +82,7 @@
 .DDownloadItem{
 
     padding: 30px;
-    border-radius: 10px 10px 0px 0px;
+    //border-radius: 10px 10px 0px 0px;
     width: 100%;
 
 
@@ -91,6 +91,12 @@
     justify-content: space-between;
 
     .DIcon{
+        width: 20px !important;
+        height: 20px !important;
+        img{
+            width: 15px !important;
+            height: 15px !important;  
+        }
         *{
             font-size: 60px;
             color: #0f1127;

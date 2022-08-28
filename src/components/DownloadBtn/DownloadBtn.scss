@@ -14,14 +14,10 @@
     transition: all linear 200ms;
     user-select: none;
     cursor: pointer;
+    text-decoration: none;
 
     &:hover{
         background: darken($color: #3f7cce, $amount: 10);
     }
 
-    .startIcon{
-        *{
-            font-size: 30px !important;
-        }
-    }
 }

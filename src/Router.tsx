@@ -34,7 +34,7 @@ export default function AppRouter() {
         <Routes>
           <Route path="/" element={<StoreContainer />}>
             <Route index element={<Store />} />
-            <Route path="home" element={<Store />} />
+            <Route path="home" element={<Store />} /> 
             <Route path="download" element={<Download />} />
             <Route path="download/:appuiId" element={<AppPage />} />
           </Route>

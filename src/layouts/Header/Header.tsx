@@ -45,7 +45,12 @@ function Header() {
             </div>
           </div>
           <div className="endNavigation">
-            <CinafBtn variant={"btn-nav sm"} noIcon>
+            <CinafBtn
+              hto={"https://cinaf.tv/fr/subscription/subscribe.html"}
+              variant={"btn-nav sm"}
+              noIcon
+              ext={true}
+            >
               S'abonner
             </CinafBtn>
             <AdminMenu />

@@ -86,7 +86,7 @@ function PresentationSection() {
           <div className="presentation-link">
             <StoreContainer>
               <div className="presentation-link-content">
-                <CinafBtn variant={"c-white-id"}>
+                <CinafBtn hto={"https://cinaf.tv/fr/"} ext={true} variant={"c-white-id"}>
                   Creer mon compte cinaf
                 </CinafBtn>
               </div>
@@ -141,7 +141,12 @@ function PresentationSection() {
                       <CinafBtn variant={"dl"} downloadBtn>
                         Telecharger
                       </CinafBtn>
-                      <CinafBtn>S'abonner</CinafBtn>
+                      <CinafBtn
+                        hto={"https://cinaf.tv/fr/subscription/subscribe.html"}
+                        ext={true}
+                      >
+                        S'abonner
+                      </CinafBtn>
                     </div>
                   </div>
                 </div>

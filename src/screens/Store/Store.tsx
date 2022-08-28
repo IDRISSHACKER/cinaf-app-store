@@ -21,7 +21,7 @@ const Store = () => {
         <OfferSession />
         <DownloadedSession />
       </div>
-    </Page>
+    </Page> 
   );
 };
 

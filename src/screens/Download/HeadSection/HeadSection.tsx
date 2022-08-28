@@ -18,10 +18,18 @@ function HeadSection(){
                 <strong className="primary2">Téléchargements</strong>
               </h1>
               <div className="head-link">
-                <DownloadBtn to="" startIcon={<AndroidOutlined />} key={"1"}>
+                <DownloadBtn
+                  to="/download/cinaf-for-android"
+                  startIcon={<AndroidOutlined />}
+                  key={"1"}
+                >
                   Telecharger cinaf pour android
                 </DownloadBtn>
-                <DownloadBtn to="" startIcon={<AppleIcon />} key={"2"}>
+                <DownloadBtn
+                  to={"/download/cinaf-for-ios"}
+                  startIcon={<AppleIcon />}
+                  key={"2"}
+                >
                   Telecharger cinaf pour ios
                 </DownloadBtn>
                 <p className="deskText">

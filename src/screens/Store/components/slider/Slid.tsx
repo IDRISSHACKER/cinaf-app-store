@@ -7,6 +7,7 @@ import Player from "./Player.svg"
 import { AndroidOutlined } from "@mui/icons-material";
 import AppleIcon from "@mui/icons-material/Apple";
 import LaptopWindowsIcon from "@mui/icons-material/LaptopWindows";
+import { Link } from "react-router-dom";
 
 function Slider(){
     const container = {
@@ -70,25 +71,31 @@ function Slider(){
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <IconButton aria-label="ios" size="large">
+                    <Link to={"/download/cinaf-for-tv"}>
+                      <IconButton aria-label="ios" size="large">
                       <LaptopWindowsIcon fontSize="inherit" />
                     </IconButton>
+                    </Link>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <IconButton aria-label="ios" size="large">
-                      <AppleIcon fontSize="inherit" />
-                    </IconButton>
+                    <Link to={"/download/cinaf-for-ios"}>
+                      <IconButton aria-label="ios" size="large">
+                        <AppleIcon fontSize="inherit" />
+                      </IconButton>
+                    </Link>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <IconButton aria-label="ios" size="large">
-                      <AndroidOutlined fontSize="inherit" />
-                    </IconButton>
+                    <Link to={"/download/cinaf-for-android"}>
+                      <IconButton aria-label="ios" size="large">
+                        <AndroidOutlined fontSize="inherit" />
+                      </IconButton>
+                    </Link>
                   </motion.div>
                 </motion.div>
               </motion.div>
