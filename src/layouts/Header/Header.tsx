@@ -1,4 +1,5 @@
 import React from "react";
+import {Routes, Route} from "react-router-dom"
 import { Typography } from "@mui/material";
 import "./Header.scss";
 import cinafApp from "./cinaf-app.png";
@@ -7,6 +8,7 @@ import { Link } from "react-router-dom";
 import AdminMenu from "./components/adminMenu/AdminMenu";
 import { useDispatch } from 'react-redux';
 import { setActiveMenu } from "../../redux/store";
+import CinafBtn from "../../components/cinafBtn/CinafBtn";
 
 function Header() {
 
@@ -17,24 +19,42 @@ function Header() {
         <div className="Head">
           <div className="startNavigation">
             <div className="logo">
-              <a href={"/store"}>
+              <Link to={"/store"}>
                 <img src={cinafApp} alt="cinafApp" />
-              </a>
+              </Link>
             </div>
             <div className="navigation">
-              <a href={"/store"} className={"link navItem"} style={{textDecoration: "none", color: "#fff"}}>
+              <Link
+                to={"/home"}
+                className={"link navItem"}
+                style={{ textDecoration: "none", color: "#fff" }}
+              >
                 <Typography>
-                  <strong>Store</strong>
+                  <strong>Acceuil</strong>
                 </Typography>
-              </a>
+              </Link>
+              <Link
+                to={"/download"}
+                className={"link navItem"}
+                style={{ textDecoration: "none", color: "#fff" }}
+              >
+                <Typography>
+                  <strong>Telecharger</strong>
+                </Typography>
+              </Link>
             </div>
           </div>
           <div className="endNavigation">
+            <CinafBtn
+              hto={"https://cinaf.tv/fr/subscription/subscribe.html"}
+              variant={"btn-nav sm hmobile"}
+              noIcon
+              ext={true}
+            >
+              S'abonner
+            </CinafBtn>
             <AdminMenu />
           </div>
-        </div>
-        <div className="sider">
-          <Sidebar />
         </div>
       </div>
     </div>

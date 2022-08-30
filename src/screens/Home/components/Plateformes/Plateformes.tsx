@@ -6,13 +6,8 @@ import "./Plateformes.scss";
 
 const plateformes = [
   {
-    id: 1,
-    name: "Windows",
-    icon: <LaptopWindowsTwoTone />,
-  },
-  {
     id: 2,
-    name: "TV",
+    name: "Smart TV",
     icon: <TvTwoTone />,
   },
   {

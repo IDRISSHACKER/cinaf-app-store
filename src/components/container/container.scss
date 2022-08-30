@@ -2,3 +2,12 @@
     max-width: 1300px !important;
     margin: auto !important;
 }
+
+@media only screen and (max-width: 720px){
+    .store-container{
+        width: 100vw !important;
+        margin: auto !important;
+        padding: none !important;
+        
+    }
+}

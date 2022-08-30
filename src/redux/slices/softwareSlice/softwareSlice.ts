@@ -4,14 +4,24 @@ import axios from "axios";
 import path from "./../../../const/path";
 
 const pathToSoftware = `${path.api_url}/softwares/1`;
+const pathToSoftware2 = `${path.api_url}/software`;
 const pathToPostSoftware = `${path.api_url}/software`;
 
 const namespace = "software";
+const namespace2 = "software2";
 
 export const getSoftware = createAsyncThunk(
   `${namespace}/fetchSoftware`,
   async () => {
     const response = await axios.get(pathToSoftware);
+    return response.data;
+  }
+);
+
+export const getSoftware2 = createAsyncThunk(
+  `${namespace2}/fetcheOne`,
+  async (id:number) => {
+    const response = await axios.get(pathToSoftware2+"/"+id);
     return response.data;
   }
 );
@@ -46,6 +56,33 @@ const softwareSlice: any = createSlice({
       state.software = action.payload;
     },
     [getSoftware.rejected]: (state: any, action: any) => {
+      state.loading = false;
+      state.error = action.error.message;
+    },
+  },
+});
+
+export const softwareSlice2: any = createSlice({
+  name: namespace2,
+  initialState: {
+    software2: [],
+    loading: true,
+    error: null,
+  },
+  reducers: {
+    getSoftware2: (state, action) => {
+      state.software2 = action.payload;
+    },
+  },
+  extraReducers: {
+    [getSoftware2.pending]: (state: any, action: any) => {
+      state.loading = true;
+    },
+    [getSoftware2.fulfilled]: (state: any, action: any) => {
+      state.loading = false;
+      state.software2 = action.payload;
+    },
+    [getSoftware2.rejected]: (state: any, action: any) => {
       state.loading = false;
       state.error = action.error.message;
     },

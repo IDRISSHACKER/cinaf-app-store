@@ -115,6 +115,7 @@ function Uploader() {
             formData2.append("type", "image");
             formData2.append("iscover", "1");
             formData2.append("software", `${res.data.softwareId}`);
+            localStorage.setItem("post", res.data.softwareId);
 
             axios
               .post(`${path.api_url}/media`, formData2)
@@ -123,6 +124,10 @@ function Uploader() {
                 setImgSelected(false);
                 setImg("");
                 setApercu(dImg);
+                dispatch({
+                  type: "uploading/setUploading",
+                  payload: true,
+                });
                 notify();
               })
               .catch((err) => {
@@ -302,8 +307,8 @@ function Uploader() {
               <br /> <br />
               <TextField
                 variant="outlined"
-                label="Donner la version de l'application"
-                type="number"
+                label="Lien de l'application sur le store"
+                type="text"
                 value={version}
                 onChange={(e) => setVersion(e.target.value)}
                 fullWidth

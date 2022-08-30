@@ -17,8 +17,8 @@ function Sidebar() {
         window.location.pathname
       );
     const [adminPages, setAdminPages] = React.useState([
-        "/dashboard",
-        "/upload",
+        "/admin/dashboard",
+        "/admin/upload",
       ]);
 
       React.useEffect(() => {
@@ -28,7 +28,10 @@ function Sidebar() {
 
       React.useEffect(() => {
         console.log(currentPage);
-        if (window.location.pathname === "/dashboard") {
+        if (
+          window.location.pathname === "/admin/dashboard" ||
+          window.location.pathname === "/admin"
+        ) {
           setActive(0);
           dispatch(setActiveMenu(0));
         } else {
@@ -51,11 +54,10 @@ function Sidebar() {
 
   return (
     <>
-      {currentPage !== "/store" ? (
         <div className="Sidebar" style={{ width: consts.sidebarWidth + "px" }}>
           <div className="sidebar-items">
             <Link
-              to={"/dashboard"}
+              to={"/admin/dashboard"}
               className={`item ${
                 activeMenu[0]?.active === 0 ? "active-it" : null
               }`}
@@ -71,7 +73,7 @@ function Sidebar() {
               </div>
             </Link>
             <Link
-              to={"/upload"}
+              to={"/admin/upload"}
               className={`item ${
                 activeMenu[0]?.active === 1 ? "active-it" : null
               }`}
@@ -83,13 +85,12 @@ function Sidebar() {
               <div className="item-text">
                 <Typography variant="body1">
                   {" "}
-                  <strong>Upload</strong>
+                  <strong>Update</strong>
                 </Typography>
               </div>
             </Link>
           </div>
         </div>
-      ) : null}
     </>
   );
 }

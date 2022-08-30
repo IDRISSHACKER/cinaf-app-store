@@ -9,7 +9,7 @@ function Footer(){
         <StoreContainer>
           <div className="footer-content">
             <div>
-              <img src="favicon.ico" alt="cinaficon" />
+              <img className="favicon" src="https://vod.cinaf.tv/favicon.ico" alt="cinaficon" />
             </div>
             <div className="section">
               <div className="section-head">
@@ -17,13 +17,13 @@ function Footer(){
               </div>
               <div className="section-body">
                 <div className="section-item">
-                  <a href="">Android</a>
+                  <a href="/download/cinaf-for-android">Android</a>
                 </div>
                 <div className="section-item">
-                  <a href="">IOS</a>
+                  <a href="/download/cinaf-for-ios">IOS</a>
                 </div>{" "}
                 <div className="section-item">
-                  <a href="">Windows</a>
+                  <a href="/download/cinaf-for-tv">Smart TV</a>
                 </div>
               </div>
             </div>
@@ -33,13 +33,13 @@ function Footer(){
               </div>
               <div className="section-body">
                 <div className="section-item">
-                  <a href="">Facebook</a>
+                  <a href="https://www.facebook.com/cinaftv">Facebook</a>
                 </div>
                 <div className="section-item">
-                  <a href="">Twitter</a>
+                  <a href="https://twitter.com/CinafTv">Twitter</a>
                 </div>{" "}
                 <div className="section-item">
-                  <a href="">Instagram</a>
+                  <a href="https://www.instagram.com/cinaf.tv/">Instagram</a>
                 </div>
               </div>
             </div>

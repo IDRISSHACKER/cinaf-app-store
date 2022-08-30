@@ -1,5 +1,6 @@
 const paths = {
-  api_url: "http://localhost:81",
+  api_url: "http://api.test",
+  path: "http://api.test/download",
 };
 
 export default paths;

@@ -60,3 +60,21 @@
 .center{
     text-align: center;
 }
+
+.mode-disabled{
+    *{
+        color: #f0f3f5
+    }
+
+    &.mode-active{
+        background: #fff;
+        .img{
+            background: #f0f3f5 !important;
+            color: white !important;
+        }
+
+         &:hover{
+            transform: scale(1) !important;
+        }
+    }
+}

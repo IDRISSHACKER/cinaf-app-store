@@ -1,4 +1,4 @@
-import { AddBoxTwoTone, NewReleasesTwoTone, UploadFileTwoTone } from "@mui/icons-material";
+import { AddBoxTwoTone, NewReleasesTwoTone, UploadFileTwoTone, UpdateOutlined } from "@mui/icons-material";
 import { Typography, Card } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -32,21 +32,21 @@ function Modes() {
             }`}
           >
             <div className="img">
-              <AddBoxTwoTone />
+              <UpdateOutlined />
             </div>
-            <Typography>Nouvelle App</Typography>
+            <Typography>Mise à jour</Typography>
           </Card>
         </div>
         <div onClick={() => selectMode(2)}>
           <Card
-            className={`mode ${
+            className={`mode mode-disabled ${
               modes[modes.length - 1]?.id === 2 ? "mode-active" : ""
             }`}
           >
             <div className="img">
               <NewReleasesTwoTone />
             </div>
-            <Typography>Nouvelle Version</Typography>
+            <Typography>Nouvelle App</Typography>
           </Card>
         </div>
       </div>

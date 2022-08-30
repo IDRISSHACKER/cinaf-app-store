@@ -2,11 +2,18 @@
     box-sizing: content-box !important;
 }
 
+.applyH{
+    height: 50px !important;
+}
+
 .cinaf-btn{
+    box-sizing: border-box;
     padding: 20px;
     border-radius: 10px;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.1rem;
+    font-weight: 600;
+    height: 12px;
+    min-width: 160px;
 
     display: flex;
     align-items: center;
@@ -14,6 +21,7 @@
     gap: 20px;
     border: none;
     transition: all linear 200ms;
+    text-decoration: none;
 
     .icon{
         opacity: .4;
@@ -67,5 +75,25 @@
     }
 }
 
+.sm{
+    height: 8px !important;
+    font-size: 12px !important;
+}
 
+
+.btn-nav{
+    background: rgba($color: lighten(#fff, 5), $alpha: 0.2);
+    width: 100px;
+
+    &:hover{
+        background: rgba($color: lighten(#fff, 5), $alpha: 0.4);
+    }
+}
+
+@media only screen and (max-width: 720px){
+    .dl{
+        font-size: 10px !important;
+        padding: 13px !important;
+    }
+}
 
