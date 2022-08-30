@@ -85,7 +85,7 @@ function Sidebar() {
               <div className="item-text">
                 <Typography variant="body1">
                   {" "}
-                  <strong>Upload</strong>
+                  <strong>Update</strong>
                 </Typography>
               </div>
             </Link>

@@ -10,6 +10,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import ModalVersion from "../../../components/ModalVersion/ModalVersion";
 import Skeleton from "@mui/material/Skeleton";
 import "./AppHead.scss"
+import paths from './../../../const/path';
 
 function AppHead({app}:any){
     const [opened, setOpened] = React.useState(false)
@@ -49,11 +50,17 @@ function AppHead({app}:any){
               </div>
             </div>
             <div className="logo">
-              <div className="cardLogo">
+              <div className="cardLogo hm">
                 <img src="https://vod.cinaf.tv/favicon.ico" />
               </div>
             </div>
           </div>
+        </div>
+        <div>
+          {/* app?.software2?.medias?.map((im:any, index:any)=>(
+            <img src={`${paths.api_url}/media/${im.id}`} key={`${index}`} />
+          ))
+          */}
         </div>
       </div>
     );

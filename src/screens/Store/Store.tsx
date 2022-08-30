@@ -22,7 +22,7 @@ const Store = () => {
         <DownloadedSession />
       </div>
     </Page> 
-  );
+  ); 
 };
 
 export default Store;

@@ -1,3 +1,63 @@
+@media only screen and (max-width: 720px){
+    .presentationSection{
+        width: 360px !important;
+        overflow: hidden;
+        
+        .presentationSection-content{
+            flex-direction: column !important;
+            gap: 10px !important;
+            width: 100% !important;
+            overflow: hidden !important;
+            width: 100% !important;
+            margin: auto;
+
+            .presentation-item{
+                width: 100% !important;
+                border-radius: 10px !important;
+                overflow: hidden !important;
+                margin: auto;
+
+                .presentation-ic{
+                    width: 100% !important;
+                    border-radius: 10px !important;
+                    overflow: hidden !important;
+
+                    img{
+                        width: 100% !important;
+                        border-radius: 10px !important;
+                        overflow: hidden !important;
+                    }
+                }
+
+                &.active{
+
+                     width: 100% !important;
+                }
+            }
+        }
+    }
+
+    .sessionDetail{
+        margin-top: -100px !important;
+        margin-bottom: 100px !important;
+        
+        .sessionDetail-content{
+            padding: 10px 20px !important;
+
+            .c-body{
+
+            }
+        }
+
+    }
+
+    .flex{
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+}
+
+
 .presentationSection{
     margin-top: 100px;
 
@@ -54,10 +114,20 @@
             }
         }
     }
+
+    .presentation-link{
+        width: 100% !important;
+        .presentation-link-content{
+            flex-direction: column !important;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }   
+    }
 }
 
 .presentation-link{
     margin-top: 50px;
+    width: 360px !important;
 
     .presentation-link-content{
         display: flex;

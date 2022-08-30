@@ -37,15 +37,9 @@ function PresentationSection() {
         <div>
           <div className="presentationSection">
             <StoreContainer>
-              <motion.div
-                className="presentationSection-content"
-                style={{ scale }}
-                ref={constraintsRef}
-              >
-                <motion.div
-                  className="presentation-item"
-                  whileHover={{ width: "610px" }}
-                  style={{ borderRadius: "40px" }}
+              <div className="presentationSection-content" ref={constraintsRef}>
+                <div
+                  className="presentation-item active"
                   ref={elem1}
                   onMouseOver={handleHover}
                 >
@@ -53,11 +47,10 @@ function PresentationSection() {
                     <div className="item-title">Au bureau</div>
                     <img src={firstIllus} />
                   </div>
-                </motion.div>
+                </div>
 
-                <motion.div
+                <div
                   className="presentation-item active"
-                  whileHover={{ width: "610px" }}
                   ref={elem2}
                   onMouseOver={handleHover}
                 >
@@ -65,11 +58,10 @@ function PresentationSection() {
                     <div className="item-title">Sur un cannapé</div>
                     <img src={secondIllus} />
                   </div>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  className="presentation-item"
-                  whileHover={{ width: "610px" }}
+                <div
+                  className="presentation-item active"
                   ref={elem3}
                   onMouseOver={handleHover}
                 >
@@ -77,8 +69,8 @@ function PresentationSection() {
                     <div className="item-title fixer">En deplacement</div>
                     <img src={thirthIllus} />
                   </div>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             </StoreContainer>
           </div>
         </div>
@@ -86,7 +78,11 @@ function PresentationSection() {
           <div className="presentation-link">
             <StoreContainer>
               <div className="presentation-link-content">
-                <CinafBtn hto={"https://cinaf.tv/fr/"} ext={true} variant={"c-white-id"}>
+                <CinafBtn
+                  hto={"https://cinaf.tv/fr/"}
+                  ext={true}
+                  variant={"c-white-id"}
+                >
                   Creer mon compte cinaf
                 </CinafBtn>
               </div>

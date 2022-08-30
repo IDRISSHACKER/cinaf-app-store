@@ -68,7 +68,7 @@ export default function WebSection(){
                   <br />
                   <CinafBtn ext={true} hto="https://vod.cinaf.tv">Parcourir notre cathalogue</CinafBtn>
                 </p>
-              </div>
+              </div> 
             </motion.div>
           </motion.div>
         </motion.div>

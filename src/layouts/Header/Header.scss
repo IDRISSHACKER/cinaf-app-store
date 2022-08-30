@@ -70,3 +70,14 @@
 .sider{
     display: flex;
 }
+
+.hmobile{
+    display: block;
+}
+
+@media only screen and (max-width: 720px){
+    .hmobile{
+        display: none !important;
+    }
+}
+

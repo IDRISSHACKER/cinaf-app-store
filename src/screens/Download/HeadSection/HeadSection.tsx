@@ -11,11 +11,11 @@ function HeadSection(){
 
     return (
       <React.Fragment>
-        <div className="headSection">
+        <div className="headSection2">
           <StoreContainer>
-            <div className="headSection-body">
+            <div className="headSection-body2">
               <h1 className="h1-title">
-                <strong className="primary2">Téléchargements</strong>
+                <strong className="primary3">Téléchargements</strong>
               </h1>
               <div className="head-link">
                 <DownloadBtn

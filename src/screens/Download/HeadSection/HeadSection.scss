@@ -1,4 +1,15 @@
-.headSection{
+@media only screen and (max-width: 720px){
+    .headSection2{
+        margin-top: 120px !important;
+    }
+
+    .primary3{
+        font-size: 40px !important;
+    }
+}
+
+
+.headSection2{
 
     margin-top: 190px;
     display: flex;
@@ -19,7 +30,7 @@
     text-align: center;
 }
 
-.primary2{
+.primary3{
     color: #ec8d30;
     background-clip: text;
     -webkit-background-clip: text;

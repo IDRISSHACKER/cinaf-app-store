@@ -17,7 +17,7 @@ function Download() {
 
   return (
     <Page title={"Téléchargements"}>
-      <div className="download">
+      <div className="download2">
         <div>
           <HeadSection />
           <DownloadBody />

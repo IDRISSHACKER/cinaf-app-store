@@ -97,3 +97,26 @@
         background-size: contain;
     }
 }
+
+.hm{
+    display: block;
+}
+
+@media only screen and (max-width: 720px){
+    .hm{
+        display: none;
+    }
+
+    .appTitle{
+        h1{
+            font-size: 32px !important;
+        }
+    }
+
+    .appHead{
+        padding-left: 10px !important ;
+        padding-right: 10px !important;
+    }
+}
+
+

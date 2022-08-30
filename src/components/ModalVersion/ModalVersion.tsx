@@ -76,6 +76,10 @@ export default function ModalVersion({
   const [downloadStart, setDownloadStart] = React.useState(false)
   const [downEnd, setDownEnd] = React.useState(false);
 
+  React.useEffect(()=>{
+    versions && setVersion(versions[0]?.path);
+  }, [versions])
+
   React.useEffect(() => {
     setOpen(opened);
   }, [opened]);
@@ -244,7 +248,7 @@ export default function ModalVersion({
         <DialogActions>
           <a href={path} ref={downloadRef} download={version}></a>
           <Button onClick={handleClose} autoFocus>
-            Miniliser
+            Minimiser
           </Button>
         </DialogActions>
       </Dialog>
