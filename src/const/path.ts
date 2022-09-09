@@ -6,7 +6,7 @@ const paths = {
     : "http://192.168.100.75:2020/api",
   path: prod
     ? "https://apps.cinaf.tv/api/download"
-    : "http://192.168.100.75:2020/download",
+    : "http://192.168.100.75:2020/api/download",
 };
 
 export default paths;
