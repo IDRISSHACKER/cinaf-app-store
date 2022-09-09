@@ -1,4 +1,4 @@
-const prod = false
+const prod = true
 
 const paths = {
   api_url: prod
