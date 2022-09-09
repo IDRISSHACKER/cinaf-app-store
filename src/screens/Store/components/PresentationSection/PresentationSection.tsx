@@ -10,6 +10,8 @@ import secondIllus from "./2.svg";
 import thirthIllus from "./3.svg";
 import "./PresentationSection.scss";
 import CinafBtn from "../../../../components/cinafBtn/CinafBtn";
+import ScrollAnimation from "react-animate-on-scroll";
+import "animate.css";
 
 
 
@@ -45,46 +47,52 @@ function PresentationSection() {
                   alignItems="stretch"
                 >
                   <Grid item>
-                    <Card className={"h-100"}>
-                      <CardContent>
-                        <div className="presentation-icu">
-                          <div className="item-title">Au bureau</div>
-                          <img
-                            src={firstIllus}
-                            alt="bureau"
-                            className="img-card"
-                          />
-                        </div>
-                      </CardContent>
-                    </Card>
+                    <ScrollAnimation animateIn="animate__rotateInUpRight">
+                      <Card className={"h-100"}>
+                        <CardContent>
+                          <div className="presentation-icu">
+                            <div className="item-title">Au bureau</div>
+                            <img
+                              src={firstIllus}
+                              alt="bureau"
+                              className="img-card"
+                            />
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </ScrollAnimation>
                   </Grid>
                   <Grid item>
-                    <Card className={"h-100"}>
-                      <CardContent>
-                        <div className="presentation-ic">
-                          <div className="item-title">Sur un canapé</div>
-                          <img
-                            src={secondIllus}
-                            alt="bureau"
-                            className="img-card"
-                          />
-                        </div>
-                      </CardContent>
-                    </Card>
+                    <ScrollAnimation animateIn="animate__slideInUp">
+                      <Card className={"h-100"}>
+                        <CardContent>
+                          <div className="presentation-ic">
+                            <div className="item-title">Sur un canapé</div>
+                            <img
+                              src={secondIllus}
+                              alt="bureau"
+                              className="img-card"
+                            />
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </ScrollAnimation>
                   </Grid>
                   <Grid item>
-                    <Card className={"h-100"}>
-                      <CardContent>
-                        <div className="presentation-ic">
-                          <div className="item-title">En deplacement</div>
-                          <img
-                            src={thirthIllus}
-                            alt="bureau"
-                            className="img-card"
-                          />
-                        </div>
-                      </CardContent>
-                    </Card>
+                  
+                      <Card className={"h-100"}>
+                        <CardContent>
+                          <div className="presentation-ic">
+                            <div className="item-title">En deplacement</div>
+                            <img
+                              src={thirthIllus}
+                              alt="bureau"
+                              className="img-card"
+                            />
+                          </div>
+                        </CardContent>
+                      </Card>
+                   
                   </Grid>
                   <Grid item xs={12} md={12} className={"flex-center"}>
                     <CinafBtn
@@ -147,16 +155,22 @@ function PresentationSection() {
                       de n'importe où.
                     </p>
                     <div className="offer-bottom flex">
-                      <CinafBtn variant={"dl btn-g"} downloadBtn>
-                        Telecharger
-                      </CinafBtn>
-                      <CinafBtn
-                        variant={"btn-g"}
-                        hto={"https://cinaf.tv/fr/subscription/subscribe.html"}
-                        ext={true}
-                      >
-                        S'abonner
-                      </CinafBtn>
+                      <ScrollAnimation animateIn="animate__rotateInUpRight">
+                        <CinafBtn variant={"dl btn-g"} downloadBtn>
+                          Telecharger
+                        </CinafBtn>
+                      </ScrollAnimation>
+                      <ScrollAnimation animateIn="animate__rotateInUpLeft">
+                        <CinafBtn
+                          variant={"btn-g"}
+                          hto={
+                            "https://cinaf.tv/fr/subscription/subscribe.html"
+                          }
+                          ext={true}
+                        >
+                          S'abonner
+                        </CinafBtn>
+                      </ScrollAnimation>
                     </div>
                   </div>
                 </div>
