@@ -53,7 +53,7 @@ function Slider(){
               animate="visible"
             >
               <motion.div className="slider-content-text" variants={item}>
-                <h1 className="slider-title h1">
+                <h1 className="slider-title h1 h1-res">
                   VOD CINAF TV
                 </h1>
                 <p className="slider-desk p">
@@ -101,14 +101,8 @@ function Slider(){
               </motion.div>
               <motion.div
                 className="slider-content-media"
-                variants={item2}
-                whileHover={{ scale: 1.04 }}
-                whileTap={{
-                  scale: 0.8,
-                  borderRadius: "100%",
-                }}
-              >
-                <img src={Player} alt="" />
+                variants={item2}>
+                <img src={Player} alt="" className="w-100" />
               </motion.div>
             </motion.div>
           </StoreContainer>

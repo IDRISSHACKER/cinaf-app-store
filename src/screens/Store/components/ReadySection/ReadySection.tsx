@@ -14,10 +14,7 @@ function ReadySection(){
         <div className="readySection">
           <StoreContainer>
             <motion.div
-              className="readySection-content"
-              style={{ scale }}
-              ref={constraintsRef}
-            >
+              className="readySection-content">
               <h2 className="readySection-content-title h2">
                 Regardez la tv <strong className="primary">partout</strong>{" "}
               </h2>

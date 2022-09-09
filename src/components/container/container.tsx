@@ -1,6 +1,7 @@
 import React from 'react';
 import consts from '../../utils/consts';
 import "./container.scss";
+import {Container as MuiC} from "@mui/material";
 
 function Container({children}:any) {
     const [currentPage, setCurrentPage] = React.useState(
@@ -15,10 +16,7 @@ function Container({children}:any) {
 
     return (
       <>
-          <div
-            className="container"
-            style={{ marginLeft: `${consts.sidebarWidth + 20}px` }}
-          >
+          <div>
             {children}
           </div>
       </>
@@ -27,7 +25,12 @@ function Container({children}:any) {
 export function StoreContainer({ children }: any) {
   return (
     <div>
-      <div className="store-container">{children}</div>
+      <MuiC
+        maxWidth="lg"
+        style={{ width: "auto" }}
+      >
+        {children}
+      </MuiC>
     </div>
   );
 }

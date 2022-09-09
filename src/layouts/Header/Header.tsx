@@ -26,21 +26,17 @@ function Header() {
             <div className="navigation">
               <Link
                 to={"/home"}
-                className={"link navItem"}
+                className={"link navItem txt-res"}
                 style={{ textDecoration: "none", color: "#fff" }}
               >
-                <Typography>
                   <strong>Acceuil</strong>
-                </Typography>
               </Link>
               <Link
                 to={"/download"}
-                className={"link navItem"}
+                className={"link navItem txt-res"}
                 style={{ textDecoration: "none", color: "#fff" }}
               >
-                <Typography>
                   <strong>Telecharger</strong>
-                </Typography>
               </Link>
             </div>
           </div>

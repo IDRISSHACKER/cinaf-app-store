@@ -36,10 +36,6 @@
             }
         }
 
-        .DText{
-            font-size: 12px !important;
-        }
-
     }
 
     .downloadLink{
@@ -50,6 +46,11 @@
     .MagnetDownloadLink{
         font-size: 10px !important;
         padding: 5px !important;
+    }
+
+    .DText{
+        font-size: 12px !important;
+        font-weight: 400;
     }
 }
 
@@ -158,12 +159,12 @@
             color: #0f1127;
         }
     }
+}
 
-    .DText{
-        text-align: left !important;
-        font-size: 12px !important;
-        font-weight: 400 !important;
-    }
+.DText{
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 

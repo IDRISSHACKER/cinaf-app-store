@@ -3,7 +3,7 @@ import React from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
-import { Card, CardContent } from "@mui/material"
+import { Card, CardContent, Grid } from "@mui/material"
 import { StoreContainer } from "../../../../components/container/container";
 import firstIllus from "./1.svg";
 import secondIllus from "./2.svg";
@@ -12,10 +12,10 @@ import "./PresentationSection.scss";
 import CinafBtn from "../../../../components/cinafBtn/CinafBtn";
 
 
+
 function PresentationSection() {
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1.2]);
-  const constraintsRef = React.useRef(null);
 
   const elem1 = React.useRef();
   const elem2 = React.useRef();
@@ -33,58 +33,69 @@ function PresentationSection() {
 
   return (
     <React.Fragment>
-      <div>
+      <div className="bg-primary padding-top padding-bottom margin-top-50 margin-bottom">
         <div>
-          <div className="presentationSection">
+          <div className="">
             <StoreContainer>
-              <div className="presentationSection-content" ref={constraintsRef}>
-                <div
-                  className="presentation-item active"
-                  ref={elem1}
-                  onMouseOver={handleHover}
+              <div className="">
+                <Grid
+                  container
+                  spacing={2}
+                  justifyContent="center"
+                  alignItems="stretch"
                 >
-                  <div className="presentation-ic">
-                    <div className="item-title">Au bureau</div>
-                    <img src={firstIllus} />
-                  </div>
-                </div>
-
-                <div
-                  className="presentation-item active"
-                  ref={elem2}
-                  onMouseOver={handleHover}
-                >
-                  <div className="presentation-ic">
-                    <div className="item-title">Sur un cannapé</div>
-                    <img src={secondIllus} />
-                  </div>
-                </div>
-
-                <div
-                  className="presentation-item active"
-                  ref={elem3}
-                  onMouseOver={handleHover}
-                >
-                  <div className="presentation-ic">
-                    <div className="item-title fixer">En deplacement</div>
-                    <img src={thirthIllus} />
-                  </div>
-                </div>
-              </div>
-            </StoreContainer>
-          </div>
-        </div>
-        <div>
-          <div className="presentation-link">
-            <StoreContainer>
-              <div className="presentation-link-content">
-                <CinafBtn
-                  hto={"https://cinaf.tv/fr/"}
-                  ext={true}
-                  variant={"c-white-id"}
-                >
-                  Creer mon compte cinaf
-                </CinafBtn>
+                  <Grid item>
+                    <Card className={"h-100"}>
+                      <CardContent>
+                        <div className="presentation-icu">
+                          <div className="item-title">Au bureau</div>
+                          <img
+                            src={firstIllus}
+                            alt="bureau"
+                            className="img-card"
+                          />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                  <Grid item>
+                    <Card className={"h-100"}>
+                      <CardContent>
+                        <div className="presentation-ic">
+                          <div className="item-title">Sur un canapé</div>
+                          <img
+                            src={secondIllus}
+                            alt="bureau"
+                            className="img-card"
+                          />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                  <Grid item>
+                    <Card className={"h-100"}>
+                      <CardContent>
+                        <div className="presentation-ic">
+                          <div className="item-title">En deplacement</div>
+                          <img
+                            src={thirthIllus}
+                            alt="bureau"
+                            className="img-card"
+                          />
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                  <Grid item xs={12} md={12} className={"flex-center"}>
+                    <CinafBtn
+                      hto={"https://cinaf.tv/fr/"}
+                      ext={true}
+                      variant={"c-white-id mt-20 w-50"}
+                    >
+                      Creer mon compte cinaf
+                    </CinafBtn>
+                  </Grid>
+                </Grid>
               </div>
             </StoreContainer>
           </div>
@@ -92,9 +103,11 @@ function PresentationSection() {
         <div>
           <div className="session-title">
             <StoreContainer>
-              <h2 className="h2 white">
-                Choisissez l'abonnement qu'il vous faut
-              </h2>
+              <div className="session-title-content">
+                <h2 className="h2 white">
+                  Choisissez l'abonnement qu'il vous faut
+                </h2>
+              </div>
             </StoreContainer>
           </div>
         </div>
@@ -116,7 +129,7 @@ function PresentationSection() {
                   </div>
                 </div>
                 <div className="flex">
-                  <div className="c-body">
+                  <div className="c-body hm">
                     <Item>
                       <p className="p">Synchonisation avec la TV</p>
                     </Item>
@@ -134,10 +147,11 @@ function PresentationSection() {
                       de n'importe où.
                     </p>
                     <div className="offer-bottom flex">
-                      <CinafBtn variant={"dl"} downloadBtn>
+                      <CinafBtn variant={"dl btn-g"} downloadBtn>
                         Telecharger
                       </CinafBtn>
                       <CinafBtn
+                        variant={"btn-g"}
                         hto={"https://cinaf.tv/fr/subscription/subscribe.html"}
                         ext={true}
                       >

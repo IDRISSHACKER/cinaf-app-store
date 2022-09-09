@@ -38,6 +38,8 @@ function Media({ identifier, uploading = false, mediaFile, handleMedia }: any) {
 
     setUid(uid + 1);
 
+    console.log(localStorage.getItem("post"));
+
     const formData = new FormData()
     formData.append("file", event.currentTarget.files[0]);
     formData.append("software", localStorage.getItem("post"))

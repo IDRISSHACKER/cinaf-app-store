@@ -34,26 +34,12 @@ export default function WebSection(){
 
     return (
       <StoreContainer>
-        <motion.div
-          className="webSection"
-          style={{ scale }}
-          ref={constraintsRef}
-          variants={container}
-        >
+        <div className="webSection">
           <motion.div className="webSection-content">
             <div className="webSection-video">
               <img src={hero} alt="" />
             </div>
-            <motion.div
-              drag
-              dragConstraints={constraintsRef}
-              className="webSection-presentation"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{
-                scale: 1.06,
-              }}
-              variants={item}
-            >
+            <div className="webSection-presentation">
               <div className="webSection-presentation-content">
                 <h2 className="webSection-presentation-content-title h2">
                   Regarder la vidéo en un{" "}
@@ -69,9 +55,9 @@ export default function WebSection(){
                   <CinafBtn ext={true} hto="https://vod.cinaf.tv">Parcourir notre cathalogue</CinafBtn>
                 </p>
               </div> 
-            </motion.div>
+            </div>
           </motion.div>
-        </motion.div>
+        </div>
       </StoreContainer>
     );
 }

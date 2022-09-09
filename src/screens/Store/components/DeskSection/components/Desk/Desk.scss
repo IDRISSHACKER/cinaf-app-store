@@ -4,6 +4,7 @@
         gap: 20px;
         align-items: center;
         justify-content: center;
+        max-width: 370px;
 
         .desk-icon{
             *{
@@ -28,4 +29,33 @@
             }
         }
     }
+}
+
+@media only screen and (max-width: 800px) {
+ .desk{
+    .desk-content{
+
+        .desk-icon{
+            *{
+                font-size: 40px;
+                color: rgba($color: darken($color: #ec8d30, $amount: 10), $alpha: .8);
+            }
+        }
+
+        .desk-content-desk{
+
+            .desk-title{
+                font-size: 16px;
+                font-weight: 400 !important;
+                color: darken($color: #ec8d30, $amount: 10);
+                word-wrap: break-word;
+            }
+            .desk-text{
+                font-size: 12px !important;
+                color: rgba($color: #0f1128, $alpha: 0.6);
+                word-wrap: break-word;
+            }
+        }
+    }
+}   
 }

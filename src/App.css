@@ -4,10 +4,3 @@ html, body{
   --primary: #10662e;
   --radius: 4px;
 }
-
-.container{
-    height: 100%;
-    margin: auto;
-    max-width: 1200px;
-    margin-top: 130px;
-}

@@ -15,11 +15,12 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { useTheme } from "@mui/material/styles";
 import { Divider, IconButton } from "@mui/material";
-import { CopyAllTwoTone, CopyAllOutlined } from "@mui/icons-material";
+import { CopyAllTwoTone, CopyAllOutlined, DownloadDoneOutlined } from "@mui/icons-material";
 import { toast } from "react-toastify";
 import { DialogContentText, Typography } from "@mui/material";
 import LinearProgress from "@mui/material/LinearProgress";
 import { MagnetDownloadLink } from "../../screens/Download/DownloadBody/DownloadBody";
+import Tooltip from "@mui/material/Tooltip";
 import axios from "axios";
 import CircularProgress, {
   CircularProgressProps,
@@ -29,6 +30,7 @@ import paths from "./../../const/path";
 import downSucc from "./file-upload.svg"
 import { useDispatch } from 'react-redux';
 import { getSoftware } from './../../redux/slices/softwareSlice/softwareSlice';
+import { DownloadOutlined } from '@mui/icons-material';
 
 function CircularProgressWithLabel(
   props: CircularProgressProps & { value: number }
@@ -149,15 +151,34 @@ export default function ModalVersion({
 
   return (
     <div>
-      <IconButton
-        color="primary"
-        aria-label="Veillez selectionner une version propre à votre appareil"
-        onClick={handleClickOpen}
-      >
-        <MagnetDownloadLink to="" variant={"smBtn"}>
-          Telecharger
-        </MagnetDownloadLink>
-      </IconButton>
+      {versions.length > 0 ? (
+        <IconButton
+          color="primary"
+          aria-label="Veillez selectionner une version propre à votre appareil"
+          onClick={handleClickOpen}
+          disabled={versions.length > 0 ? false : true}
+        >
+          <MagnetDownloadLink
+            to=""
+            variant={"smBtn"}
+            disabled={versions.length > 0 ? false : true}
+          >
+            Telecharger
+          </MagnetDownloadLink>
+        </IconButton>
+      ) : (
+        <Tooltip title="Application indisponible" arrow>
+          <div>
+            <Button
+              disabled
+              variant="contained"
+              startIcon={<DownloadOutlined />}
+            >
+              Telecharger
+            </Button>
+          </div>
+        </Tooltip>
+      )}
 
       <Dialog
         fullScreen={fullScreen}

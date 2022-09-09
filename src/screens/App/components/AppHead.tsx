@@ -11,13 +11,33 @@ import ModalVersion from "../../../components/ModalVersion/ModalVersion";
 import Skeleton from "@mui/material/Skeleton";
 import "./AppHead.scss"
 import paths from './../../../const/path';
+import axios from "axios"
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 function AppHead({app}:any){
     const [opened, setOpened] = React.useState(false)
+    const [load, setLoad] = React.useState(true)
+    const [img, setImg] = React.useState("")
 
     const handleOpenVersion = function(e:any){
         setOpened(e)
     }
+
+    React.useEffect(()=>{
+          /*axios({
+            url: "https://apps.cinaf.tv/favicon.ico",
+            method: "GET",
+            responseType: "blob",
+          }).then((response) => {
+            const url = window.URL.createObjectURL(new Blob([response.data]));
+            setImg(url);
+            
+          });*/
+          setTimeout(()=>{
+            setLoad(false);
+          }, 3000)
+    }, [])
 
     return (
       <div>
@@ -36,31 +56,91 @@ function AppHead({app}:any){
                 </div>
               </div>
               <div className="appMeta">
-                <MetaItem title="4.8" desc="676 review" />
-                <MetaItem title="100K+" desc="Downloads" />
-                <MetaItem title="3+" desc="Rated for 3+" />
+                {app?.loading && (
+                  <Skeleton variant="rounded" width={80} height={60} />
+                )}
+                {app?.loading && (
+                  <Skeleton variant="rounded" width={80} height={60} />
+                )}
+                {app?.loading && (
+                  <Skeleton variant="rounded" width={80} height={60} />
+                )}
+                {!app?.loading && <MetaItem title="4.8" desc="~1k review" />}
+                {!app?.loading && (
+                  <MetaItem
+                    title={app?.software2?.downloaded}
+                    desc="Downloads"
+                  />
+                )}
+                {!app?.loading && <MetaItem title="3+" desc="Rated for 3+" />}
               </div>
               <div className="appDownload">
-                <ModalVersion
-                  opened={opened}
-                  setOpened={handleOpenVersion}
-                  link={""}
-                  versions={app?.software2?.versions}
-                />
+                {!app.loading && (
+                  <ModalVersion
+                    opened={opened}
+                    setOpened={handleOpenVersion}
+                    link={""}
+                    versions={app?.software2?.versions}
+                  />
+                )}
+                {app.loading && (
+                  <Skeleton variant="rounded" width={210} height={40} />
+                )}
               </div>
             </div>
             <div className="logo">
-              <div className="cardLogo hm">
-                <img src="https://vod.cinaf.tv/favicon.ico" />
-              </div>
+              {!load && (
+                <div className="cardLogo hm">
+                  <img src="https://vod.cinaf.tv/favicon.ico" alt="" />
+                </div>
+              )}
+              {load && <Skeleton className="hm" variant="rounded" width={260} height={260} />}
             </div>
           </div>
         </div>
         <div>
-          {/* app?.software2?.medias?.map((im:any, index:any)=>(
-            <img src={`${paths.api_url}/media/${im.id}`} key={`${index}`} />
-          ))
-          */}
+          {/**          <div className="imgDesc">
+            {!app?.loading && app?.software2?.medias?.length > 0 && (
+              <Splide
+                style={{ overflow: "hidden !important" }}
+                aria-label="Services"
+                options={{
+                  rewind: true,
+                  autoplay: true,
+                  perPage: 6,
+                  perMove: 6,
+                  gap: 15,
+                  pagination: false,
+                  breakpoints: {
+                    623: {
+                      perPage: 2,
+                      perMove: 2,
+                    },
+                    935: {
+                      perPage: 4,
+                      perMove: 4,
+                    },
+                    1247: {
+                      perPage: 5,
+                      perMove: 5,
+                    },
+                  },
+                }}
+              >
+                {app?.software2?.medias?.map((im: any, index: any) => (
+                  <SplideSlide>
+                    <img
+                      className="imgCrop"
+                      src={`${paths.api_url}/media/${im.id}`}
+                      key={`${index}`}
+                      alt={"image desc"}
+                    />
+                  </SplideSlide>
+                ))}
+              </Splide>
+            )}
+          </div>
+           */}
         </div>
       </div>
     );

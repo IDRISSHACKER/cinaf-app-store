@@ -14,6 +14,7 @@ import androidSrc from "./playStore.png";
 import CinafBtn from "../../../components/cinafBtn/CinafBtn";
 import { getSoftware } from "./../../../redux/slices/softwareSlice/softwareSlice";
 import { json } from "stream/consumers";
+import Skeleton from '@mui/material/Skeleton';
 
 function DownloadBody() {
   return (
@@ -79,13 +80,10 @@ function DDownloadContent() {
             !softwares.error &&
             softwares?.software[2]?.store
           }`}
-          to={`/download/${
-            !softwares.loading &&
-            !softwares.error &&
-            softwares?.software[2]?.slug
-          }`}
+          to={`/download/cinaf-for-android`}
           icon={<AndroidOutlined />}
           img={androidSrc}
+          loading={softwares.loading}
         >
           {!softwares.loading &&
             !softwares.error &&
@@ -97,13 +95,10 @@ function DDownloadContent() {
             !softwares.error &&
             softwares?.software[0]?.store
           }`}
-          to={`/download/${
-            !softwares.loading &&
-            !softwares.error &&
-            softwares?.software[0]?.slug
-          }`}
+          to={`/download/cinaf-for-ios`}
           icon={<AppleIcon />}
           img={appleSrc}
+          loading={softwares.loading}
         >
           {!softwares.loading &&
             !softwares.error &&
@@ -122,15 +117,12 @@ function DDownloadContentTV() {
     <div className="DDownload">
       <div className="DDownload-body">
         <DDownloadItem
-          to={`/download/${
-            !softwares.loading &&
-            !softwares.error &&
-            softwares?.software[1]?.slug
-          }`}
+          to={`/download/cinaf-for-tv`}
           icon={<AndroidOutlined />}
           img={androidSrc}
           inStore={false}
           variant={"fw"}
+          loading={softwares.loading}
         >
           {!softwares.loading &&
             !softwares.error &&
@@ -149,17 +141,40 @@ function DDownloadItem({
   isLink = true,
   img = androidSrc,
   inStore = true,
+  loading = false
 }: any) {
+
+  const status = true;
+
   return (
     <div className="DDownloadItem">
-      <div className="DIcon">{icon}</div>
-      <div className="DText">{children}</div>
+      <div className="DIcon">
+        {!loading && <div>{icon}</div>}
+        {loading && (
+          <div>
+            <Skeleton variant="rounded" width={60} height={50} />
+          </div>
+        )}
+      </div>
+      <div className="DText">
+        {!loading && <div>{children}</div>}
+        {loading && (
+          <div className="hm">
+            <Skeleton variant="rounded" width={200} height={40} />
+          </div>
+        )}
+      </div>
       {isLink && (
         <div className="DLink">
           {inStore && (
-            <DDownloadLink to={toStore} icon={<img src={img} alt="" />}>
-              Telecharger sur le store
-            </DDownloadLink>
+            <div>
+              <div>
+                {loading && <Skeleton  width={"100%"} height={70} />}
+              </div>
+              {!loading && <DDownloadLink to={toStore} icon={<img src={img} alt="" />}>
+                Telecharger sur le store
+              </DDownloadLink>}
+            </div>
           )}
           <MagnetDownloadLink to={to}>Telecharger</MagnetDownloadLink>
         </div>
