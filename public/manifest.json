@@ -1,6 +1,6 @@
 {
-  "short_name": "Guihon uploader",
-  "name": "televersement de fichier guihon",
+  "short_name": "Cinaf store",
+  "name": "telechargement d'appli cinaf",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#000010",
+  "background_color": "#f0f3f5"
 }

@@ -172,7 +172,7 @@ function DDownloadItem({
                 {loading && <Skeleton  width={"100%"} height={70} />}
               </div>
               {!loading && <DDownloadLink to={toStore} icon={<img src={img} alt="" />}>
-                Telecharger sur le store
+               <span className="hm"> Telecharger sur le</span> store
               </DDownloadLink>}
             </div>
           )}

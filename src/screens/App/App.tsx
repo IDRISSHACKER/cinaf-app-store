@@ -30,7 +30,7 @@ function AppPage() {
     dispatch(getSoftware2(params.appuiId));
   },[])
   
-  const soft = useSelector((state:any) => state.software2);
+  const soft = useSelector((state:any) => state?.software2);
 
   return (
     <Page title="Telechargement de l'application">

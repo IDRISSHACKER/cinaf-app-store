@@ -23,14 +23,14 @@ function HeadSection(){
                   startIcon={<AndroidOutlined />}
                   key={"1"}
                 >
-                  Telecharger cinaf pour android
+                  <span className="hm">Telecharger</span> cinaf pour android
                 </DownloadBtn>
                 <DownloadBtn
                   to={"/download/cinaf-for-ios"}
                   startIcon={<AppleIcon />}
                   key={"2"}
                 >
-                  Telecharger cinaf pour ios
+                  <span className="hm">Telecharger</span> cinaf pour ios
                 </DownloadBtn>
                 <p className="deskText">
                   Pas encore de compte Cinaf ?{" "}

@@ -4,11 +4,15 @@
         .webSection-content{
             padding: 10px !important;
             flex-direction: column !important;
+
+            .webSection-presentation{
+                padding: 20px !important;
+            }
         }
     }
 }
 
-
+ 
 .webSection{
     
     margin-top: 100px;
