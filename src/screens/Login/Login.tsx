@@ -1,7 +1,7 @@
+// @ts-nocheck
 import * as React from "react"
 import TextField from '@mui/material/TextField';
 import { Button, Card, CardContent, CardActions } from "@mui/material"
-import axios from "axios"
 import { ToastContainer, toast } from "react-toastify";
 import log from "./log.svg"
 import "./Login.scss"
