@@ -2,7 +2,6 @@ import React from "react"
 import { Typography, IconButton } from "@mui/material";
 import { StoreContainer } from "./../../../../components/container/container";
 import { motion} from "framer-motion";
-import "./Slider.scss"
 import Player from "./Player.svg"
 import { AndroidOutlined } from "@mui/icons-material";
 import AppleIcon from "@mui/icons-material/Apple";
@@ -41,9 +40,6 @@ function Slider(){
       <div className="slider-container">
         <motion.div
           className="slider"
-          whileTap={{
-            scale: 1,
-          }}
         >
           <StoreContainer>
             <motion.div
@@ -53,10 +49,11 @@ function Slider(){
               animate="visible"
             >
               <motion.div className="slider-content-text" variants={item}>
+                <br />
                 <h1 className="slider-title h1">
-                  VOD CINAF TV
+                  CINAF TV
                 </h1>
-                <p className="slider-desk p">
+                <p className="slider-desk p subtitle dark">
                   Profitez de la meilleure qualité de{" "}
                   <strong>streaming video</strong> camerounais en ligne
                   disponible sur toute les plateformes.
@@ -67,20 +64,14 @@ function Slider(){
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
+                  <motion.div>
                     <Link to={"/download/cinaf-for-tv"}>
                       <IconButton aria-label="ios" size="large">
                       <LaptopWindowsIcon fontSize="inherit" />
                     </IconButton>
                     </Link>
                   </motion.div>
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
+                  <motion.div>
                     <Link to={"/download/cinaf-for-ios"}>
                       <IconButton aria-label="ios" size="large">
                         <AppleIcon fontSize="inherit" />
@@ -103,12 +94,8 @@ function Slider(){
                 className="slider-content-media"
                 variants={item2}
                 whileHover={{ scale: 1.04 }}
-                whileTap={{
-                  scale: 0.8,
-                  borderRadius: "100%",
-                }}
               >
-                <img src={Player} alt="" />
+                <img src={Player} className="w100" alt="" />
               </motion.div>
             </motion.div>
           </StoreContainer>

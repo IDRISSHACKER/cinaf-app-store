@@ -4,7 +4,6 @@ import { StoreContainer } from "./../../../../components/container/container";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import hero from "./hero.png";
 
-import "./WebSection.scss"
 
 export default function WebSection(){
 
@@ -34,25 +33,16 @@ export default function WebSection(){
 
     return (
       <StoreContainer>
-        <motion.div
+        <div
           className="webSection"
-          style={{ scale }}
           ref={constraintsRef}
-          variants={container}
         >
-          <motion.div className="webSection-content">
+          <div className="webSection-content">
             <div className="webSection-video">
               <img src={hero} alt="" />
             </div>
-            <motion.div
-              drag
-              dragConstraints={constraintsRef}
+            {/**<div
               className="webSection-presentation"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{
-                scale: 1.06,
-              }}
-              variants={item}
             >
               <div className="webSection-presentation-content">
                 <h2 className="webSection-presentation-content-title h2">
@@ -69,9 +59,9 @@ export default function WebSection(){
                   <CinafBtn ext={true} hto="https://vod.cinaf.tv">Parcourir notre cathalogue</CinafBtn>
                 </p>
               </div> 
-            </motion.div>
-          </motion.div>
-        </motion.div>
+            </div>**/}
+          </div>
+        </div>
       </StoreContainer>
     );
 }

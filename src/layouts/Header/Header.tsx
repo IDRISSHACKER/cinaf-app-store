@@ -1,7 +1,6 @@
 import React from "react";
 import {Routes, Route} from "react-router-dom"
 import { Typography } from "@mui/material";
-import "./Header.scss";
 import cinafApp from "./cinaf-app.png";
 import Sidebar from './../Sidebar/Sidebar';
 import { Link } from "react-router-dom";
@@ -45,15 +44,7 @@ function Header() {
             </div>
           </div>
           <div className="endNavigation">
-            <CinafBtn
-              hto={"https://cinaf.tv/fr/subscription/subscribe.html"}
-              variant={"btn-nav sm hmobile"}
-              noIcon
-              ext={true}
-            >
-              S'abonner
-            </CinafBtn>
-            <AdminMenu />
+            <a href="https://cinaf.tv" className="btn btn-primary btn-head">CINAF TV</a>
           </div>
         </div>
       </div>

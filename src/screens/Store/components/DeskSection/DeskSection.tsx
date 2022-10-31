@@ -6,7 +6,6 @@ import LiveTvTwoToneIcon from "@mui/icons-material/LiveTvTwoTone";
 import RocketTwoToneIcon from "@mui/icons-material/RocketTwoTone";
 import { StoreContainer } from "./../../../../components/container/container";
 import Desk from "./components/Desk/Desk";
-import "./DeskContent.scss"
 
 function DeskSection(){
     return (

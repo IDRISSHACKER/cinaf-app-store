@@ -8,7 +8,6 @@ import { StoreContainer } from "../../../../components/container/container";
 import firstIllus from "./1.svg";
 import secondIllus from "./2.svg";
 import thirthIllus from "./3.svg";
-import "./PresentationSection.scss";
 import CinafBtn from "../../../../components/cinafBtn/CinafBtn";
 
 

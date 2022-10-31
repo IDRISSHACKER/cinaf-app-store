@@ -8998,6 +8998,11 @@
     "ajv" "^6.12.2"
     "ajv-keywords" "^3.4.1"
 
+"scss-reset@^1.2.2":
+  "integrity" "sha512-y3QLhXQCiwS5YxYSl4nGQkyIvaCtMm6O8V7clVrIihWQGOEv1IpEpLGpcOWOasizc+DEEMyge1Peu0BCmeu/bg=="
+  "resolved" "https://registry.npmjs.org/scss-reset/-/scss-reset-1.2.2.tgz"
+  "version" "1.2.2"
+
 "scss-tokenizer@^0.4.3":
   "integrity" "sha512-raKLgf1LI5QMQnG+RxHz6oK0sL3x3I4FN2UDLqgLOGO8hodECNnNh5BXn7fAyBxrA8zVzdQizQ6XjNJQ+uBwMw=="
   "resolved" "https://registry.npmjs.org/scss-tokenizer/-/scss-tokenizer-0.4.3.tgz"

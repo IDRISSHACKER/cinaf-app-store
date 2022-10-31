@@ -4,7 +4,7 @@ import Flexer from './../../components/Flexer';
 import Uploader from './components/Uploader';
 import mediaUpload from "./components/mediaUpload.svg"
 import Modes from './components/Mode/Modes';
-import Container from './../../components/container/container';
+import Container from '@mui/material/Container';
 import Page from "../../components/Page";
 
 function Home(){

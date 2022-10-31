@@ -6,7 +6,6 @@ import { StoreContainer } from "../../../components/container/container";
 import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
 import PersonalVideoOutlinedIcon from "@mui/icons-material/PersonalVideoOutlined";
 import LaunchOutlinedIcon from "@mui/icons-material/LaunchOutlined";
-import "./DownloadBody.scss";
 import { AndroidOutlined } from "@mui/icons-material";
 import AppleIcon from "@mui/icons-material/Apple";
 import appleSrc from "./AppleStore.png";

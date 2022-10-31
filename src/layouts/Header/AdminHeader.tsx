@@ -1,7 +1,6 @@
 import React from "react";
 import {Routes, Route} from "react-router-dom"
 import { Typography } from "@mui/material";
-import "./Header.scss";
 import cinafApp from "./cinaf-app.png";
 import Sidebar from './../Sidebar/Sidebar';
 import { Link } from "react-router-dom";

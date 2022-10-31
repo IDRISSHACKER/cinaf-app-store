@@ -1,7 +1,6 @@
 import React from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { StoreContainer } from "../../../../components/container/container";
-import "./ReadySection.scss"
 
 function ReadySection(){
 
@@ -15,7 +14,6 @@ function ReadySection(){
           <StoreContainer>
             <motion.div
               className="readySection-content"
-              style={{ scale }}
               ref={constraintsRef}
             >
               <h2 className="readySection-content-title h2">

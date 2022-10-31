@@ -1,35 +1,16 @@
-import React from 'react';
-import consts from '../../utils/consts';
-import "./container.scss";
+// @ts-nocheck
+import * as React from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 
-function Container({children}:any) {
-    const [currentPage, setCurrentPage] = React.useState(
-      window.location.pathname
-    );
-    const [adminPages, setAdminPages] = React.useState(["/dashboard", "/upload"]);
-    
-    React.useEffect(() => {
-      setCurrentPage(window.location.pathname);
-      console.log(currentPage);
-    })
-
-    return (
-      <>
-          <div
-            className="container"
-            style={{ marginLeft: `${consts.sidebarWidth + 20}px` }}
-          >
-            {children}
-          </div>
-      </>
-    );
-}
-export function StoreContainer({ children }: any) {
+export function StoreContainer({children}) {
   return (
-    <div>
-      <div className="store-container">{children}</div>
-    </div>
+    <React.Fragment>
+      <CssBaseline />
+      <Container maxWidth="lg" style={{width: "auto"}}>
+        {children}
+      </Container>
+    </React.Fragment>
   );
 }
-
-export default Container;

@@ -12,7 +12,6 @@ import WebSection from "./components/WebSection/WebSection";
 import DeskSection from "./components/DeskSection/DeskSection";
 import ReadySection from "./components/ReadySection/ReadySection";
 
-import "./Store.scss";
 import path from "../../const/path";
 import OfferSession from "./components/OfferSession/OfferSession";
 

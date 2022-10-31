@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import { Typography } from "@mui/material";
 import "./Dashboard.scss";
-import Container from "./../../components/container/container";
+import Container from '@mui/material/Container';
 import DownloadProgress from "./components/DownloadProgress/DownloadProgress";
 import AppManager from "./components/appManager/appManager";
 import Page from "../../components/Page";

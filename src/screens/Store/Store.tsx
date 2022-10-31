@@ -7,19 +7,20 @@ import OfferSession from "./components/OfferSession/OfferSession";
 import DownloadedSession from "./components/DownloadSection/DownloadSection";
 import Page from "../../components/Page";
 
-import "./Store.scss";
-
 const Store = () => {
 
   return (
     <Page title="Cinaf roi du streaming camrounais">
       <div className="welcome">
         <Slider />
-        <WebSection />
-        <DeskSection />
+        {/**
+         *
+         * <DeskSection />
         <ReadySection />
         <OfferSession />
-        <DownloadedSession />
+         */}
+         <WebSection />
+         <DownloadedSession />
       </div>
     </Page> 
   ); 

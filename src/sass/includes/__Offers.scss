@@ -1,0 +1,27 @@
+.offers{
+    background: $primaryDark !important;
+    position: relative;
+    margin-top: 200px;
+    margin-bottom: 300px;
+    height: 1000px;
+    
+    .oc{
+        position: relative;
+    }
+
+    .offers-body{
+        left: 0;
+        margin-top: -220px;
+        position: absolute;
+    }
+}
+
+.white{
+    color: #fff;
+}
+
+@media only screen and (max-width: 720px){
+    .offers{
+        
+    }
+}

@@ -1,0 +1,37 @@
+.white{
+    color: rgb(245, 245, 245);
+}
+
+.box{
+    display: block;
+    width: 100%;
+}
+
+.h10{
+    height: 20px !important;
+}
+
+.w100{
+    width: 100% !important;
+}
+
+.subtitle{
+    line-height: 25px !important;
+}  
+
+@media only screen and (min-width: 700px) {
+    .subtitle{
+        font-size: 1.3rem !important;
+        line-height: 40px !important; 
+    }  
+}
+
+.dark{
+    color: #000 !important;
+}
+
+.link{
+    text-decoration: none !important;
+}
+
+

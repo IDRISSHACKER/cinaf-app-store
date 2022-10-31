@@ -3,7 +3,6 @@ import React from "react"
 import CinafBtn from "../../../components/cinafBtn/CinafBtn";
 import { StoreContainer } from "../../../components/container/container"
 import DownloadBtn from "../../../components/DownloadBtn/DownloadBtn";
-import "./HeadSection.scss"
 import { AndroidOutlined } from '@mui/icons-material';
 import AppleIcon from '@mui/icons-material/Apple';
 
