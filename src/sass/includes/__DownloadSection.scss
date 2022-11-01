@@ -1,10 +1,9 @@
 .download{
-
-    margin-bottom: 100px;
+    background: $secondaryDark;
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
     
     .downloadContent{
-        background: $primaryDark;
-        padding: 50px 40px 50px 40px;
 
         p{
             color: rgba(245, 245, 245, 0.6);
@@ -25,19 +24,3 @@
     }
 }
 
-@media only screen and (max-width: 720px){
-    .download{
-        margin-top: 100px !important;
-        margin-bottom: 100px !important;
-        border-radius: 10px !important;
-
-        .downloadContent{
-            padding: 40px 10px 40px 10px;
-
-            h2{
-                font-size: 18px !important;
-                font-weight: 500;
-            }
-        }
-    }
-}

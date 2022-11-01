@@ -1,6 +1,5 @@
 @media only screen and (max-width: 720px){
     .slider{
-        height: 900px !important;
         width: 100% !important;
         .slider-content{
             flex-direction: column !important;
@@ -12,7 +11,6 @@
 
 .slider{
     overflow: hidden;
-    height: 500px;
     background: #fff;
     padding-top: 100px;
     box-shadow: 1px 40px 81px -79px rgba(0,0,0,0.4);

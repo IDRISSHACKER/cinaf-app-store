@@ -20,6 +20,7 @@ const Store = () => {
         <OfferSession />
          */}
          <WebSection />
+         <ReadySection />
          <DownloadedSession />
       </div>
     </Page> 

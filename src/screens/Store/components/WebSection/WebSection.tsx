@@ -1,9 +1,9 @@
 import React from "react";
-import CinafBtn from "../../../../components/cinafBtn/CinafBtn";
+import Typography from "@mui/material/Typography";
 import { StoreContainer } from "./../../../../components/container/container";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
-import hero from "./hero.png";
-
+import { useViewportScroll, useTransform } from "framer-motion";
+import allDevices from "./../../../../assets/all-devices.svg"
+import CheckCircleOutlineOutlined from "@mui/icons-material/CheckCircleOutlineOutlined"
 
 export default function WebSection(){
 
@@ -32,37 +32,41 @@ export default function WebSection(){
     };
 
     return (
-      <StoreContainer>
+      
         <div
           className="webSection"
           ref={constraintsRef}
         >
           <div className="webSection-content">
-            <div className="webSection-video">
-              <img src={hero} alt="" />
+            <StoreContainer>
+              <div className="webSection-video">
+                <img src={allDevices} alt="Tous les apareils" />
+                <h2 className="h2 white center">Un Compte  pour profiter du VOD partout</h2>
+                <ul className="devices white">
+                  <li> 
+                    <CheckCircleOutlineOutlined className="green" />
+                    <span>MOBILE</span> 
+                  </li>
+                  <li>
+                    <CheckCircleOutlineOutlined className="green" />
+                    <span>ORDINATEUR</span>
+                  </li>
+                  <li>
+                    <CheckCircleOutlineOutlined className="green" />
+                    <span>TABLETE</span>
+                  </li>
+                  <li>
+                    <CheckCircleOutlineOutlined className="green" />
+                    <span>SMART TV</span>
+                  </li>
+                  <li>
+                    <CheckCircleOutlineOutlined className="green" />
+                    <span>LECTEUR WEB</span>
+                  </li>
+                </ul>
             </div>
-            {/**<div
-              className="webSection-presentation"
-            >
-              <div className="webSection-presentation-content">
-                <h2 className="webSection-presentation-content-title h2">
-                  Regarder la vidéo en un{" "}
-                  <strong className="primary">click</strong>
-                </h2>
-                <p className="webSection-presentation-content-body p">
-                  Grace à l'interface utilisateur construit sur mesure par nos
-                  meilleures designer, la navigation parmis dans le contenus
-                  cinaf devient un reel plaisir.
-                </p>
-                <p>
-                  <br />
-                  <CinafBtn ext={true} hto="https://vod.cinaf.tv">Parcourir notre cathalogue</CinafBtn>
-                </p>
-              </div> 
-            </div>**/}
+            </StoreContainer>
           </div>
         </div>
-      </StoreContainer>
     );
 }
-

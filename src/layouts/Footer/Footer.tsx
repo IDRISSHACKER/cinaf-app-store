@@ -8,19 +8,21 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 function Footer(){
 
     return (
-      <div className="footer">
-          <div className="footer-content">
-            <div className="socials">
-                <Link className="social" href="https://www.facebook.com/cinaftv">
-                  <FacebookIcon />
-                </Link>
-                <Link className="social" href="https://twitter.com/CinafTv">
-                  <TwitterIcon />
-                </Link>
-                <Link className="social" href="https://www.instagram.com/cinaf.tv">
-                  <InstagramIcon />
-                </Link>
-            </div>
+      <div className="footerr">
+          <div className="footerr-content">
+            <StoreContainer>
+              <div className="socials">
+                  <Link className="social" href="https://www.facebook.com/cinaftv">
+                    <FacebookIcon />
+                  </Link>
+                  <Link className="social" href="https://twitter.com/CinafTv">
+                    <TwitterIcon />
+                  </Link>
+                  <Link className="social" href="https://www.instagram.com/cinaf.tv">
+                    <InstagramIcon />
+                  </Link>
+              </div>
+            </StoreContainer>
             <div className="vector">
               <StoreContainer>
                 <img src="https://cinaf.tv/favicon.ico" />

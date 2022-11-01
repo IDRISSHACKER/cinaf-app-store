@@ -1,8 +1,31 @@
 .readySection{
     margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    .readySection-content{
-        
+    .ready{
+        .links{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .storeIcon{
+                &:nth-child(1){
+                    img{
+                        height: 57px !important;
+                        width: auto;
+                    }
+                }
+                &:nth-child(2){
+                    img{
+                        height: 40px !important;
+                        width: auto;
+                    }
+                }
+            }
+        }
     }
     
 }

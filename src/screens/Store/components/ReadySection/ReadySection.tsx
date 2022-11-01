@@ -1,6 +1,9 @@
 import React from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { StoreContainer } from "../../../../components/container/container";
+import google from "./../../../../assets/google.svg"
+import apple from "./../../../../assets/apple.svg"
+import { Link } from "@mui/material";
 
 function ReadySection(){
 
@@ -12,18 +15,20 @@ function ReadySection(){
       <React.Fragment>
         <div className="readySection">
           <StoreContainer>
-            <motion.div
-              className="readySection-content"
-              ref={constraintsRef}
-            >
-              <h2 className="readySection-content-title h2">
-                Regardez la tv <strong className="primary">partout</strong>{" "}
-              </h2>
-              <p className="readySection-content-body p2">
-                Accedez à cinaf depuis n'importequelle emplacement: depuis votre
-                canappé, en deplacement, au bureau.
-              </p>
-            </motion.div>
+            <div className="center ready">
+              <h2 className="h2">Regardez aussi vos series préférés sur votre mobile et votre tablette.</h2>
+              <br />
+              <p className="p">Streamer sur votre téléphone ou votre tablette est rapide, facile et amusant</p>
+              <br />
+              <div className="links">
+                <Link href="https://play.google.com/store/apps/details?id=com.cinaf.mobile.stream&hl=en&gl=US" className="storeIcon">
+                  <img src={google} alt="google play store" />
+                </Link>
+                <Link href="https://play.google.com/store/apps/details?id=com.cinaf.mobile.stream&hl=en&gl=US" className="storeIcon">
+                  <img src={apple} alt="apple store" />
+                </Link>
+              </div>
+            </div>
           </StoreContainer>
         </div>
       </React.Fragment>
