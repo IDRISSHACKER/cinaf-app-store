@@ -18,24 +18,27 @@ function DownloadBody() {
   return (
     <div className="mb-10">
       <div className="downloadBody">
-        <StoreContainer>
           <div className="downloadBody-content">
-            <div className="d-head">
-              <DHeadBody />
-            </div>
-            <br />
-            <div className="d-body">
-              <DTitle icon={<PhoneAndroidOutlinedIcon />}>
-                Smartphones et tablettes
-              </DTitle>
-              <DDownloadContent />
-              <br />
-              <br />
-              <DTitle icon={<PersonalVideoOutlinedIcon />}>Smart TV</DTitle>
-              <DDownloadContentTV />
-            </div>
+              <StoreContainer>
+                <div className="d-head">
+                  <DHeadBody />
+                </div>
+                <br />
+                  <br />
+                  <br/>
+                  <br/>
+                <div className="d-body">
+                  <DTitle icon={<PhoneAndroidOutlinedIcon />}>
+                    Smartphones et tablettes
+                  </DTitle>
+                  <DDownloadContent />
+                  <br />
+                  <br />
+                  <DTitle icon={<PersonalVideoOutlinedIcon />}>Smart TV</DTitle>
+                  <DDownloadContentTV />
+                </div>
+              </StoreContainer>
           </div>
-        </StoreContainer>
       </div>
     </div>
   );

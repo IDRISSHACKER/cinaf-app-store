@@ -4,7 +4,6 @@ import { StoreContainer } from "../../components/container/container";
 import Page from "../../components/Page";
 import AppHead from "./components/AppHead";
 import { ToastContainer } from "react-toastify";
-import "./AppPage.scss";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import paths from "./../../const/path";

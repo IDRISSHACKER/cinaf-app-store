@@ -11,9 +11,8 @@ function HeadSection(){
     return (
       <React.Fragment>
         <div className="headSection2">
-          <StoreContainer>
             <div className="headSection-body2">
-              <h1 className="h1-title">
+              <h1 className="h1-title mb20">
                 <strong className="primary3">Téléchargements</strong>
               </h1>
               <div className="head-link">
@@ -37,7 +36,6 @@ function HeadSection(){
                 </p>
               </div>
             </div>
-          </StoreContainer>
         </div>
       </React.Fragment>
     );

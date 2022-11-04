@@ -154,7 +154,7 @@ export default function ModalVersion({
         aria-label="Veillez selectionner une version propre à votre appareil"
         onClick={handleClickOpen}
       >
-        <MagnetDownloadLink to="" variant={"smBtn"}>
+        <MagnetDownloadLink to="" variant={"smtbn"}>
           Telecharger
         </MagnetDownloadLink>
       </IconButton>
@@ -173,10 +173,10 @@ export default function ModalVersion({
               Vous êtes sur le point de demarrer le téléchargement de cinaf
             </span>
           ) : (
-            <span>Telechargement</span>
+            <span>CINAF</span>
           )}
         </DialogTitle>
-        <Divider />
+        <hr className={"hr"} />
         <DialogContent>
           {!downEnd ? (
             <div>
@@ -244,7 +244,7 @@ export default function ModalVersion({
             </div>
           )}
         </DialogContent>
-        <Divider />
+          <hr className={"hr"} />
         <DialogActions>
           <a href={path} ref={downloadRef} download={version}></a>
           <Button onClick={handleClose} autoFocus>

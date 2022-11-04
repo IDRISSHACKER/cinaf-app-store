@@ -9,7 +9,6 @@ import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import ModalVersion from "../../../components/ModalVersion/ModalVersion";
 import Skeleton from "@mui/material/Skeleton";
-import "./AppHead.scss"
 import paths from './../../../const/path';
 
 function AppHead({app}:any){
@@ -51,7 +50,7 @@ function AppHead({app}:any){
             </div>
             <div className="logo">
               <div className="cardLogo hm">
-                <img src="https://vod.cinaf.tv/favicon.ico" />
+                <img src="https://cinaf.tv/favicon.ico" alt="Cinf Icon" />
               </div>
             </div>
           </div>

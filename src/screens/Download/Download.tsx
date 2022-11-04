@@ -5,7 +5,8 @@ import HeadSection from "./HeadSection/HeadSection";
 import DownloadBody from "./DownloadBody/DownloadBody";
 import Page from "../../components/Page";
 import { useDispatch, useSelector } from "react-redux";
-import { getSoftware } from "./../../redux/slices/softwareSlice/softwareSlice";
+import { getSoftware } from "../../redux/slices/softwareSlice/softwareSlice";
+import {StoreContainer} from "../../components/container/container";
 
 function Download() {
   const dispatch = useDispatch();
@@ -19,9 +20,10 @@ function Download() {
     <Page title={"Téléchargements"}>
       <div className="download2">
         <div>
-          <HeadSection />
-          <DownloadBody />
-          <Box sx={{ height: 200 }} />
+          <StoreContainer>
+            <HeadSection />
+          </StoreContainer>
+          <DownloadBody/>
         </div>
       </div>
     </Page>
